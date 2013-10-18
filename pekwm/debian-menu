@@ -1,0 +1,191 @@
+# Menu config for pekwm
+
+	Submenu = "Aide" {
+		Entry = "Info" { Actions = "Exec x-terminal-emulator  -T \"Info\" -e sh -c \"info\" &" } 
+		Entry = "yelp" { Actions = "Exec /usr/bin/yelp &" } 
+	} 
+	Submenu = "Applications" {
+		Submenu = "Bureautique" {
+			Entry = "LibreOffice Calc" { Actions = "Exec /usr/bin/libreoffice --calc &" } 
+			Entry = "LibreOffice Impress" { Actions = "Exec /usr/bin/libreoffice --impress &" } 
+			Entry = "LibreOffice Writer" { Actions = "Exec /usr/bin/libreoffice --writer &" } 
+		} 
+		Submenu = "Dessin et image" {
+			Entry = "ImageMagick" { Actions = "Exec /usr/bin/display.im6 logo: &" } 
+			Entry = "Inkscape" { Actions = "Exec /usr/bin/inkscape &" } 
+			Entry = "LibreOffice Draw" { Actions = "Exec /usr/bin/libreoffice --draw &" } 
+			Entry = "The GIMP" { Actions = "Exec /usr/bin/gimp &" } 
+		} 
+		Submenu = "Éditeurs" {
+			Entry = "Gedit" { Actions = "Exec /usr/bin/gedit &" } 
+			Entry = "Nano" { Actions = "Exec x-terminal-emulator  -T \"Nano\" -e sh -c \"/bin/nano\" &" } 
+		} 
+		Submenu = "Émulateurs" {
+			Entry = "PlayOnLinux" { Actions = "Exec /usr/bin/playonlinux &" } 
+		} 
+		Submenu = "Émulateurs de terminaux" {
+			Entry = "Aterm" { Actions = "Exec /usr/bin/aterm-xterm &" } 
+			Entry = "Eterm" { Actions = "Exec /usr/bin/Eterm &" } 
+			Entry = "Gnome Terminal" { Actions = "Exec /usr/bin/gnome-terminal &" } 
+			Entry = "mrxvt" { Actions = "Exec /usr/bin/mrxvt-full &" } 
+			Entry = "XTerm" { Actions = "Exec xterm &" } 
+			Entry = "X-Terminal as root (GKsu)" { Actions = "Exec /usr/bin/gksu -u root /usr/bin/x-terminal-emulator &" } 
+			Entry = "XTerm (Unicode)" { Actions = "Exec uxterm &" } 
+		} 
+		Submenu = "Gestion de données" {
+			Entry = "Tomboy" { Actions = "Exec /usr/bin/tomboy &" } 
+		} 
+		Submenu = "Gestion de fichiers" {
+			Entry = "Baobab" { Actions = "Exec /usr/bin/baobab &" } 
+			Entry = "Brasero" { Actions = "Exec /usr/bin/brasero &" } 
+			Entry = "File-Roller" { Actions = "Exec /usr/bin/file-roller &" } 
+			Entry = "Nautilus" { Actions = "Exec /usr/bin/nautilus &" } 
+			Entry = "ROX Filer" { Actions = "Exec /usr/bin/rox &" } 
+		} 
+		Submenu = "Interpréteurs de commandes" {
+			Entry = "Bash" { Actions = "Exec x-terminal-emulator  -T \"Bash\" -e sh -c \"/bin/bash --login\" &" } 
+			Entry = "Dash" { Actions = "Exec x-terminal-emulator  -T \"Dash\" -e sh -c \"/bin/dash -i\" &" } 
+			Entry = "Sh" { Actions = "Exec x-terminal-emulator  -T \"Sh\" -e sh -c \"/bin/sh --login\" &" } 
+			Entry = "Zsh" { Actions = "Exec x-terminal-emulator  -T \"Zsh\" -e sh -c \"/bin/zsh5\" &" } 
+		} 
+		Submenu = "Langue écrite" {
+			Entry = "Character map" { Actions = "Exec /usr/bin/gucharmap &" } 
+			Entry = "GNOME Dictionary" { Actions = "Exec /usr/bin/gnome-dictionary &" } 
+		} 
+		Submenu = "Lecteurs" {
+			Entry = "Evince" { Actions = "Exec /usr/bin/evince &" } 
+			Entry = "Eye of GNOME" { Actions = "Exec /usr/bin/eog &" } 
+			Entry = "Shotwell" { Actions = "Exec /usr/bin/shotwell &" } 
+		} 
+		Submenu = "Programmation" {
+			Entry = "Python (v2.6)" { Actions = "Exec x-terminal-emulator  -T \"Python (v2.6)\" -e sh -c \"/usr/bin/python2.6\" &" } 
+			Entry = "Python (v2.7)" { Actions = "Exec x-terminal-emulator  -T \"Python (v2.7)\" -e sh -c \"/usr/bin/python2.7\" &" } 
+			Entry = "Python (v3.3)" { Actions = "Exec x-terminal-emulator  -T \"Python (v3.3)\" -e sh -c \"/usr/bin/python3.3\" &" } 
+			Entry = "Tclsh8.5" { Actions = "Exec x-terminal-emulator  -T \"Tclsh8.5\" -e sh -c \"/usr/bin/tclsh8.5\" &" } 
+			Entry = "TkWish8.5" { Actions = "Exec x-terminal-emulator -e /usr/bin/wish8.5 &" } 
+		} 
+		Submenu = "Réseau" {
+			Submenu = "Communication" {
+				Entry = "Evolution" { Actions = "Exec /usr/bin/evolution &" } 
+				Entry = "Icedove Mail" { Actions = "Exec icedove &" } 
+				Entry = "Manhole Twisted Client" { Actions = "Exec /usr/bin/manhole &" } 
+				Entry = "Mutt" { Actions = "Exec x-terminal-emulator  -T \"Mutt\" -e sh -c \"/usr/bin/mutt\" &" } 
+				Entry = "Pidgin" { Actions = "Exec /usr/bin/pidgin &" } 
+				Entry = "Telnet" { Actions = "Exec x-terminal-emulator  -T \"Telnet\" -e sh -c \"/usr/bin/telnet\" &" } 
+				Entry = "Twisted Application Generator" { Actions = "Exec /usr/bin/tkmktap &" } 
+				Entry = "Twisted SSH Client" { Actions = "Exec /usr/bin/tkconch &" } 
+				Entry = "Vinagre" { Actions = "Exec vinagre &" } 
+				Entry = "xtightvncviewer" { Actions = "Exec /usr/bin/xtightvncviewer &" } 
+			} 
+			Submenu = "Navigateurs web" {
+				Entry = "Google Chrome" { Actions = "Exec /opt/google/chrome/google-chrome &" } 
+				Entry = "Iceweasel" { Actions = "Exec iceweasel &" } 
+				Entry = "w3m" { Actions = "Exec x-terminal-emulator  -T \"w3m\" -e sh -c \"/usr/bin/w3m /usr/share/doc/w3m/MANUAL.html\" &" } 
+			} 
+			Submenu = "Surveillance" {
+				Entry = "Mtr" { Actions = "Exec mtr &" } 
+			} 
+			Submenu = "Transfert de fichiers" {
+				Entry = "Transmission BitTorrent Client (GTK)" { Actions = "Exec /usr/bin/transmission-gtk &" } 
+			} 
+		} 
+		Submenu = "Sciences" {
+			Submenu = "Mathématiques" {
+				Entry = "Bc" { Actions = "Exec x-terminal-emulator  -T \"Bc\" -e sh -c \"/usr/bin/bc\" &" } 
+				Entry = "Dc" { Actions = "Exec x-terminal-emulator  -T \"Dc\" -e sh -c \"/usr/bin/dc\" &" } 
+				Entry = "Gnuplot" { Actions = "Exec x-terminal-emulator  -T \"Gnuplot\" -e sh -c \"/usr/bin/gnuplot\" &" } 
+				Entry = "LibreOffice Math" { Actions = "Exec /usr/bin/libreoffice --math &" } 
+			} 
+		} 
+		Submenu = "Son et musique" {
+			Entry = "Audacious" { Actions = "Exec /usr/bin/audacious &" } 
+			Entry = "easytag" { Actions = "Exec /usr/bin/easytag &" } 
+			Entry = "grecord (GNOME 2.0 Recorder)" { Actions = "Exec /usr/bin/gnome-sound-recorder &" } 
+			Entry = "paman" { Actions = "Exec /usr/bin/paman &" } 
+			Entry = "pavucontrol" { Actions = "Exec /usr/bin/pavucontrol &" } 
+			Entry = "pavumeter" { Actions = "Exec /usr/bin/pavumeter &" } 
+			Entry = "Rhythmbox" { Actions = "Exec /usr/bin/rhythmbox &" } 
+			Entry = "Sound Juicer" { Actions = "Exec /usr/bin/sound-juicer &" } 
+		} 
+		Submenu = "Système" {
+			Submenu = "Administration" {
+				Entry = "Debian Task selector" { Actions = "Exec x-terminal-emulator  -T \"Debian Task selector\" -e sh -c \"su-to-root -c tasksel\" &" } 
+				Entry = "Editres" { Actions = "Exec editres &" } 
+				Entry = "Gnome Control Center" { Actions = "Exec /usr/bin/gnome-control-center &" } 
+				Entry = "GNOME Network Tool" { Actions = "Exec /usr/bin/gnome-nettool &" } 
+				Entry = "GTK+ 2.0 theme manager" { Actions = "Exec /usr/bin/gtk-chtheme &" } 
+				Entry = "GTK+ 2.0 Theme Switch" { Actions = "Exec /usr/bin/gtk-theme-switch2 &" } 
+				Entry = "LXAppearance" { Actions = "Exec /usr/bin/lxappearance &" } 
+				Entry = "Reportbug" { Actions = "Exec x-terminal-emulator  -T \"Reportbug\" -e sh -c \"/usr/bin/reportbug --exit-prompt\" &" } 
+				Entry = "Reportbug (GTK+)" { Actions = "Exec /usr/bin/reportbug --exit-prompt --ui gtk2 &" } 
+				Entry = "stalonetray" { Actions = "Exec /usr/bin/stalonetray &" } 
+				Entry = "Xfontsel" { Actions = "Exec xfontsel &" } 
+				Entry = "Xkill" { Actions = "Exec xkill &" } 
+				Entry = "Xrefresh" { Actions = "Exec xrefresh &" } 
+			} 
+			Submenu = "Gestionnaires de paquets" {
+				Entry = "Aptitude Package Manager (text)" { Actions = "Exec x-terminal-emulator  -T \"Aptitude Package Manager (text)\" -e sh -c \"/usr/bin/aptitude-curses\" &" } 
+				Entry = "Synaptic Package Manager" { Actions = "Exec x-terminal-emulator -e synaptic-pkexec &" } 
+			} 
+			Submenu = "Matériel" {
+				Entry = "NVIDIA Settings" { Actions = "Exec /usr/lib/nvidia/current/nvidia-settings &" } 
+				Entry = "Xvidtune" { Actions = "Exec xvidtune &" } 
+			} 
+			Submenu = "Sécurité" {
+				Entry = "Seahorse" { Actions = "Exec /usr/bin/seahorse &" } 
+			} 
+			Submenu = "Surveillance" {
+				Entry = "GNOME system monitor" { Actions = "Exec /usr/bin/gnome-system-monitor &" } 
+				Entry = "Pstree" { Actions = "Exec x-terminal-emulator  -T \"Pstree\" -e sh -c \"/usr/bin/pstree.x11\" &" } 
+				Entry = "Top" { Actions = "Exec x-terminal-emulator  -T \"Top\" -e sh -c \"/usr/bin/top\" &" } 
+				Entry = "Xev" { Actions = "Exec x-terminal-emulator -e xev &" } 
+			} 
+		} 
+		Submenu = "Vidéo" {
+			Entry = "Totem" { Actions = "Exec /usr/bin/totem &" } 
+			Entry = "VLC media player" { Actions = "Exec /usr/bin/qvlc &" } 
+		} 
+	} 
+	Submenu = "Écran" {
+		Submenu = "Veille" {
+			Entry = "Activate ScreenSaver (Next)" { Actions = "Exec /usr/bin/xscreensaver-command -next &" } 
+			Entry = "Activate ScreenSaver (Previous)" { Actions = "Exec /usr/bin/xscreensaver-command -prev &" } 
+			Entry = "Activate ScreenSaver (Random)" { Actions = "Exec /usr/bin/xscreensaver-command -activate &" } 
+			Entry = "Demo Screen Hacks" { Actions = "Exec /usr/bin/xscreensaver-command -demo &" } 
+			Entry = "Disable XScreenSaver" { Actions = "Exec /usr/bin/xscreensaver-command -exit &" } 
+			Entry = "Enable XScreenSaver" { Actions = "Exec /usr/bin/xscreensaver &" } 
+			Entry = "Reinitialize XScreenSaver" { Actions = "Exec /usr/bin/xscreensaver-command -restart &" } 
+			Entry = "ScreenSaver Preferences" { Actions = "Exec /usr/bin/xscreensaver-command -prefs &" } 
+		} 
+		Submenu = "Verrouillage" {
+			Entry = "Lock Screen (XScreenSaver)" { Actions = "Exec /usr/bin/xscreensaver-command -lock &" } 
+		} 
+	} 
+	Submenu = "Gestionnaires de fenêtres" {
+		Entry = "Pekwm" { Actions = "RestartOther /usr/bin/pekwm" } 
+	} 
+	Submenu = "Jeux" {
+		Submenu = "Action" {
+			Entry = "Red Eclipse" { Actions = "Exec /usr/games/redeclipse &" } 
+			Entry = "Trigger Rally" { Actions = "Exec /usr/games/trigger-rally &" } 
+		} 
+		Submenu = "Cartes" {
+			Entry = "Gnome Solitaire Games" { Actions = "Exec /usr/games/sol &" } 
+		} 
+		Submenu = "Casse-tête" {
+			Entry = "trackballs" { Actions = "Exec /usr/games/trackballs &" } 
+		} 
+		Submenu = "Jouets" {
+			Entry = "dclock" { Actions = "Exec /usr/bin/dclock &" } 
+		} 
+		Submenu = "Réflexion" {
+			Entry = "GnuChess" { Actions = "Exec x-terminal-emulator  -T \"GnuChess\" -e sh -c \"/usr/games/gnuchess\" &" } 
+			Entry = "uliGo" { Actions = "Exec /usr/games/uligo &" } 
+		} 
+		Submenu = "Simulation" {
+			Entry = "TORCS" { Actions = "Exec /usr/games/torcs &" } 
+		} 
+		Submenu = "Stratégie" {
+			Entry = "Bos Wars" { Actions = "Exec /usr/games/boswars &" } 
+		} 
+	} 
