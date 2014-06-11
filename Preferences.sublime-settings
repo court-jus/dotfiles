@@ -1,0 +1,15 @@
+{
+	"color_scheme": "Packages/User/Solarized (Dark) (SL).tmTheme",
+	"ensure_newline_at_eof_on_save": "true",
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"RestructuredText",
+		"Vintage"
+	],
+	"rulers":
+	[
+		78,
+		80
+	]
+}
