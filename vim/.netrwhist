@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/gl/src/MCA6'
+let g:netrw_dirhist_2='/home/gl/src/MCA4/clarideploy'
+let g:netrw_dirhist_3='/home/gl/src/MCA6/docs/manuel/messagerie'
+let g:netrw_dirhist_4='/home/gl/src/MCA6/clarideploy'
+let g:netrw_dirhist_5='/home/gl/src/MCA320/clarideploy'
+let g:netrw_dirhist_6='/home/gl/src/everything/config'
+let g:netrw_dirhist_7='/home/gl/src/MCA6/docs/manuel/worklist'
+let g:netrw_dirhist_8='/home/gl/src/MCA6/colisage'
