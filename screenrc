@@ -8,7 +8,8 @@ shell "/bin/zsh"
   defscrollback 1000            # default: 100
   silencewait 15            # default: 30
   pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
-caption always "%{=}%?%{r}%H %L=%{+b}%?%{b}%-Lw%47L>%?%{w}%n*%f %t %?%{b}%+Lw%?%{g}%-31=%c %l %Y-%m-%d"
+  caption always "%{=}%?%{r}%H %L=%{+b}%?%{b}%-Lw%47L>%?%{w}%n*%f %t %?%{b}%+Lw%?%{g}%-31=%c %l %Y-%m-%d"
+  hardstatus string "%L=%{+b}%?%{b}%-Lw%47L>%?%{w}%n*%f %t %?%{b}%+Lw%?%{g}%-31=%c %l %Y-%m-%d"
   termcap  xterm hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
   terminfo xterm hs@:cs=\E[%i%p1%d;%p2%dr:im=\E[4h:ei=\E[4l
   termcapinfo  xterm Z0=\E[?3h:Z1=\E[?3l:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
@@ -60,7 +61,5 @@ caption always "%{=}%?%{r}%H %L=%{+b}%?%{b}%-Lw%47L>%?%{w}%n*%f %t %?%{b}%+Lw%?%
 
 msgwait 15
 setenv DISPLAY ':0'
-logfile /home/username/logs/screen_%Y-%m-%d_%0c
-bindkey -k F1 prev
-bindkey -k F2 next
+logfile /home/gl/logs/screen_%Y-%m-%d_%0c
 
