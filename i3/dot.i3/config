@@ -46,7 +46,7 @@ bindsym $mod+l exec i3lock
 bindsym $mod+Shift+g exec google-chrome
 bindsym $mod+Ctrl+Mod1+Return exec /opt/sublime_text/sublime_text
 bindsym Mod1+F2 exec /usr/bin/grun
-bindsym $mod+Shift+s exec /home/gl/bin/myscrot -s
+bindsym --release Print exec /home/gl/bin/myscrot -s
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
