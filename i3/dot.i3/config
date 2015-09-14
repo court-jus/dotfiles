@@ -186,3 +186,9 @@ exec /usr/bin/pidgin
 exec /usr/bin/icedove
 exec /usr/bin/xset m 4/1
 exec /usr/bin/Esetroot /home/gl/share/backgrounds/trialscreen/stretch.png
+
+for_window [title="The Bridge"] floating enable
+for_window [title="RaceTheSun"] floating enable
+for_window [title="CardCityNights"] floating enable
+for_window [title="Karma - Google Chrome" class="Google-chrome"] move container to workspace 6
+
