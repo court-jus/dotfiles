@@ -46,12 +46,15 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/mes_aliases_git
 
 alias lr="ls -artlh"
+#alias cd="pushd"
 
 function precmd {
-    if readlink -f .local/bin/activate > /dev/null ; then
+    if readlink -f .local/bin/activate | grep -q "^$HOME/"; then
         source .local/bin/activate
     fi
 }
 
 # Customize to your needs...
-export PATH=$PATH:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+export GOROOT=/home/gl/src/go-dist
+export GOPATH=/home/gl/src/go
+export PATH=$PATH:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin
