@@ -184,3 +184,5 @@ exec /usr/bin/google-musicmanager
 exec /home/gl/tools/copy.com/copy/x86_64/CopyAgent
 exec /usr/bin/pidgin
 exec /usr/bin/icedove
+exec /usr/bin/xset m 4/1
+exec /usr/bin/Esetroot /home/gl/share/backgrounds/trialscreen/stretch.png
