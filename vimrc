@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
+#call vundle#rc()
+#Plugin 'gmarik/vundle'
 filetype plugin indent on
 
 syn on
@@ -105,4 +105,4 @@ imap <C-q> <C-]>
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 
 
-Bundle 'wakatime/vim-wakatime'
+#Bundle 'wakatime/vim-wakatime'
