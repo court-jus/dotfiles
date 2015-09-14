@@ -1,15 +1,26 @@
 {
 	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
+	"detect_indentation": false,
 	"ensure_newline_at_eof_on_save": "true",
-	"font_size": 11,
+	"font_size": 12,
 	"ignored_packages":
 	[
-		"RestructuredText",
-		"Vintage"
+		"Vintage",
+		"AutoPEP8",
+		"RestructuredText"
+	],
+	"open_externally_patterns":
+	[
+		"*.pdf",
+		"*.zip",
+		"*.xls"
 	],
 	"rulers":
 	[
 		78,
 		80
-	]
+	],
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": true
 }
