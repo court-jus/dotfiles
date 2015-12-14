@@ -1,0 +1,22 @@
+[
+	{ "keys": ["ctrl+["], "command": "fold" },
+	{ "keys": ["ctrl+]"], "command": "unfold" },
+	{ "keys": ["ctrl+k", "ctrl+j"], "command": "unfold_all" },
+	{ "keys": ["ctrl+k", "ctrl+h"], "command": "fold_all" },
+	{ "keys": ["ctrl+k", "ctrl+&"], "command": "fold_by_level", "args": {"level": 1} },
+	{ "keys": ["ctrl+k", "ctrl+é"], "command": "fold_by_level", "args": {"level": 2} },
+	{ "keys": ["ctrl+k", "ctrl+\""], "command": "fold_by_level", "args": {"level": 3} },
+	{ "keys": ["ctrl+k", "ctrl+'"], "command": "fold_by_level", "args": {"level": 4} },
+	{ "keys": ["ctrl+k", "ctrl+("], "command": "fold_by_level", "args": {"level": 5} },
+	{ "keys": ["ctrl+k", "ctrl+-"], "command": "fold_by_level", "args": {"level": 6} },
+	{ "keys": ["ctrl+k", "ctrl+è"], "command": "fold_by_level", "args": {"level": 7} },
+	{ "keys": ["ctrl+k", "ctrl+_"], "command": "fold_by_level", "args": {"level": 8} },
+	{ "keys": ["ctrl+k", "ctrl+ç"], "command": "fold_by_level", "args": {"level": 9} },
+	{ "keys": ["ctrl+alt+d"], "command": "file_diff_menu" },
+    { "keys": ["ctrl+alt+e"], "command": "file_diff_menu", "args": {"cmd": ["opendiff", "$file1", "$file2"] } },
+    { "keys": ["ctrl+alt+f"], "command": "find_next_conflict" },
+    { "keys": ["super+shift+enter"], "command": "open_externally",
+      "args": {"then_close": false}
+    }
+
+]

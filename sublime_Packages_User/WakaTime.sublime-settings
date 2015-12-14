@@ -1,0 +1,12 @@
+{
+	"api_key": "fd9ccbfa-774d-475b-bbe8-ea59500bfda7",
+    "ignore": ["^/tmp/",
+               "^/etc/",
+               "^/var/",
+               "^/home/gl/src/ng-austerity/",
+               "^/home/gl/perso/",
+               "COMMIT_EDITMSG$",
+               "PULLREQ_EDITMSG$",
+               "MERGE_MSG$",
+               "TAG_EDITMSG$"],
+}

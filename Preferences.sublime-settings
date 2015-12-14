@@ -1,13 +1,14 @@
 {
-	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (Flake8Lint) (SL).tmTheme",
 	"detect_indentation": false,
 	"ensure_newline_at_eof_on_save": "true",
-	"font_size": 12,
+	"font_face": "Source Code Pro",
+	"font_size": 10,
 	"ignored_packages":
 	[
-		"Vintage",
 		"AutoPEP8",
-		"RestructuredText"
+		"RestructuredText",
+		"Vintage"
 	],
 	"open_externally_patterns":
 	[

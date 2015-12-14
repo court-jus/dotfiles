@@ -1,0 +1,33 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoPEP8",
+		"Git Conflict Resolver",
+		"GitCommitMsg",
+		"GitGutter",
+		"GitStatus",
+		"Non Text Files",
+		"Package Control",
+		"Pandoc",
+		"Python Flake8 Lint",
+		"Restructured Text (RST) Snippets",
+		"SideBarEnhancements",
+		"SideBarGit",
+		"Solarized Color Scheme",
+		"Solarized Toggle",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-flake8",
+		"SublimeLinter-gjslint",
+		"SublimeLinter-html-tidy",
+		"Sublimerge Pro",
+		"SyncedSideBar",
+		"UnicodeMath",
+		"View In Browser",
+		"WakaTime"
+	]
+}

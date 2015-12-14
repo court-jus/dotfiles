@@ -58,3 +58,4 @@ function precmd {
 export GOROOT=/home/gl/src/go-dist
 export GOPATH=/home/gl/src/go
 export PATH=$PATH:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin
+export PAGER="less -S"
