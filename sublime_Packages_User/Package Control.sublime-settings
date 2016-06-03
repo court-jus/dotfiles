@@ -10,6 +10,7 @@
 		"GitCommitMsg",
 		"GitGutter",
 		"GitStatus",
+		"LPrint",
 		"Non Text Files",
 		"Package Control",
 		"Pandoc",
@@ -24,10 +25,10 @@
 		"SublimeLinter-flake8",
 		"SublimeLinter-gjslint",
 		"SublimeLinter-html-tidy",
-		"Sublimerge Pro",
 		"SyncedSideBar",
 		"UnicodeMath",
 		"View In Browser",
-		"WakaTime"
+		"WakaTime",
+		"Wrap Plus"
 	]
 }

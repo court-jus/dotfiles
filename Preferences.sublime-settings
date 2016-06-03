@@ -3,7 +3,7 @@
 	"detect_indentation": false,
 	"ensure_newline_at_eof_on_save": "true",
 	"font_face": "Source Code Pro",
-	"font_size": 10,
+	"font_size": 11,
 	"ignored_packages":
 	[
 		"AutoPEP8",

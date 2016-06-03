@@ -46,6 +46,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/mes_aliases_git
 
 alias lr="ls -artlh"
+alias bas="ssh bastion"
 #alias cd="pushd"
 
 function precmd {
@@ -57,5 +58,5 @@ function precmd {
 # Customize to your needs...
 export GOROOT=/home/gl/src/go-dist
 export GOPATH=/home/gl/src/go
-export PATH=$PATH:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin:/home/gl/anaconda3/bin
 export PAGER="less -S"

@@ -1884,13 +1884,13 @@
 		</dict>
 	<dict>
             <key>name</key>
-            <string>Python Flake8 Lint Error</string>
+            <string>Python Flake8 Lint Gutter Mark</string>
             <key>scope</key>
-            <string>flake8lint.mark.error</string>
+            <string>flake8lint.mark.gutter</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#DA2000</string>
+                <string>#FFFFFF</string>
             </dict>
         </dict><dict>
             <key>name</key>
@@ -1914,13 +1914,13 @@
             </dict>
         </dict><dict>
             <key>name</key>
-            <string>Python Flake8 Lint Gutter Mark</string>
+            <string>Python Flake8 Lint Error</string>
             <key>scope</key>
-            <string>flake8lint.mark.gutter</string>
+            <string>flake8lint.mark.error</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#FFFFFF</string>
+                <string>#DA2000</string>
             </dict>
         </dict></array>
 	<key>uuid</key>
