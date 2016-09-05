@@ -1,0 +1,2 @@
+cd /home/gl/PDF/
+evince $(ls -rt | tail -n1)

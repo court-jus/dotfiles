@@ -1,0 +1,6 @@
+#!/bin/bash
+
+commit=$1
+
+git branch -va --contains=${commit}
+git tag --contains=${commit} -l

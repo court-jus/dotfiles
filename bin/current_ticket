@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+cd ${HOME}/src/MCA3/run
+
+symref=$(git symbolic-ref HEAD)
+
+num=${symref##refs/heads/}
+
+if numeroticket=`echo "$num" | sed -e "s/[^0-9]//g"` ; then
+	google-chrome https://claritick.clarisys.fr/ticket/modify/$numeroticket/
+fi

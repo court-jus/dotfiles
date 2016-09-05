@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$2" == "show" ]; then
+    xvnc4viewer -passwd ${HOME}/.vnc/passwd 10.31.254.41:$(awk -F: '$1 ~ /VNCPORT/ {print $2}' "$1")
+elif [ "$2" == "web" ]; then
+    google-chrome http://$(awk -F: '$1 ~ /IP/ {print $2}' "$1")
+elif [ "$2" == "restart" ]; then
+    sleep 2 ; ssh root@lost kvmctl reset $(awk -F: '$1 ~ /NOM/ {print $2}' "$1")
+fi

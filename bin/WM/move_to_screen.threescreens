@@ -1,0 +1,109 @@
+#!/bin/bash
+
+#if [ $1 -eq 1 ] ; then
+#    #wmctrl -r :ACTIVE: -e 0,0,0,-1,-1 
+#    xdotool getactivewindow windowmove 0 0 windowraise mousemove --window %1 11 10
+#elif [ $1 -eq 2 ] ; then
+#    #wmctrl -r :ACTIVE: -e 0,1440,0,-1,-1 
+#    xdotool getactivewindow windowmove 1440 0 windowraise mousemove --window %1 10 11
+#fi
+
+get_win_info()
+    {
+    xwininfo -id $(xdotool getactivewindow)
+    }
+
+get_win_left_coord()
+    {
+    get_win_info | grep "Absolute upper-left X" | cut -d: -f2 | awk '{print $1}'
+    }
+
+get_rel_win_left_coord()
+    {
+    x=$(get_win_left_coord)
+    if [ $x -gt 2880 ]; then
+        # we are on third monitor
+        echo $[ x - 2880 ]
+    elif [ $x -gt 1440 ]; then
+        # we are on second monitor
+        echo $[ x - 1440 ]
+    else
+        # we are on first monitor
+        echo $x
+    fi
+    }
+get_border_x()
+    {
+    get_win_info | grep "Relative upper-left X" | cut -d: -f2 | awk '{print $1}'
+    }
+get_border_y()
+    {
+    get_win_info | grep "Relative upper-left Y" | cut -d: -f2 | awk '{print $1}'
+    }
+get_win_top_coord()
+    {
+    get_win_info | grep "Absolute upper-left Y" | cut -d: -f2 | awk '{print $1}'
+    }
+get_monitor_number()
+    {
+    x=$(get_win_left_coord)
+    s=0
+    if [ $x -gt 1440 ]; then s=1; fi
+    if [ $x -gt 2880 ]; then s=2; fi
+    echo $s
+    }
+
+move_to_first()
+    {
+    mon=$(get_monitor_number)
+    relx=$(get_rel_win_left_coord)
+    rely=$(get_win_top_coord)
+    bx=$(get_border_x)
+    by=$(get_border_y)
+    if [ $mon -eq 0 ]; then return; fi
+    xdotool getactivewindow windowmove $[ relx - bx ] $[ rely - by ] windowraise mousemove --window %1 10 11
+    }
+move_to_second()
+    {
+    mon=$(get_monitor_number)
+    relx=$(get_rel_win_left_coord)
+    rely=$(get_win_top_coord)
+    bx=$(get_border_x)
+    by=$(get_border_y)
+    if [ $mon -eq 1 ]; then return; fi
+    xdotool getactivewindow windowmove $[ relx + 1440 - bx ] $[ rely - by ] windowraise mousemove --window %1 10 11
+    }
+move_to_third()
+    {
+    mon=$(get_monitor_number)
+    relx=$(get_rel_win_left_coord)
+    rely=$(get_win_top_coord)
+    bx=$(get_border_x)
+    by=$(get_border_y)
+    if [ $mon -eq 2 ]; then return; fi
+    xdotool getactivewindow windowmove $[ relx + 2880 - bx ] $[ rely - by ] windowraise mousemove --window %1 10 11
+    }
+move_left()
+    {
+    mon=$(get_monitor_number)
+    if [ $mon -eq 1 ]; then move_to_first; fi
+    if [ $mon -eq 2 ]; then move_to_second; fi
+    }
+move_right()
+    {
+    mon=$(get_monitor_number)
+    if [ $mon -eq 0 ]; then move_to_second; fi
+    if [ $mon -eq 1 ]; then move_to_third; fi
+    }
+
+if [ "$1" == "LEFT" ]; then
+    move_left
+elif [ "$1" == "RIGHT" ]; then
+    move_right
+elif [ "$1" == "FIRST" ]; then
+    move_right
+elif [ "$1" == "SECOND" ]; then
+    move_right
+elif [ "$1" == "THIRD" ]; then
+    move_right
+fi

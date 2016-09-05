@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while true
+    do
+    if [ $((ssh mca@10.31.254.205 "grep -A2 discharging /proc/acpi/battery/BAT0/state" ; ssh mca@10.31.254.234 "grep -A2 discharging /proc/acpi/battery/BAT0/state") | awk '$1 ~ /remain/ {print $3}') -lt 800 ]
+        then
+        zenity --info --text "Change le chargeur"
+        fi
+    sleep 120
+    done

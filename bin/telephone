@@ -1,0 +1,155 @@
+#!/bin/bash
+
+# udev rule :
+# KERNEL=="sd?", SUBSYSTEMS=="usb", ATTRS{product}=="Nokia X3-00", ATTRS{serial}=="352691042110494", SYMLINK+="mynokia"
+#
+
+DEVICE=/dev/$1
+FOLDER=/media/$1
+SRC_FOLDER=${HOME}/Musique
+SRC_FOLDERS=${SRC_FOLDER}/folders
+COPIED_FILES=${SRC_FOLDER}/copied_files
+TEL_MOUNTED=0
+
+trap 'clean_exit' 1 2 15
+
+clean_exit()
+    {
+    umount_tel
+    exit 1
+    }
+
+find_phone()
+    {
+    ls ${DEVICE} &> /dev/null
+    }
+
+force_umount ()
+    {
+    sudo umount $DEVICE
+    }
+
+mount_tel ()
+    {
+    pmount $DEVICE && TEL_MOUNTED=1
+    }
+
+umount_tel ()
+    {
+    if [ $TEL_MOUNTED -eq 1 ]; then
+        pumount $DEVICE || force_umount
+    fi
+    }
+
+mount_nigoki()
+    {
+    sshfs nigoki:Musique ${SRC_FOLDER}
+    }
+
+umount_nigoki()
+    {
+    fusermount -u ${SRC_FOLDER}
+    }
+
+files_on_phone ()
+    {
+    ls ${FOLDER}
+    }
+
+files_on_disk()
+    {
+    for srcfol in `cat ${SRC_FOLDERS}` ; do
+        #ls ${SRC_FOLDER}/${srcfol}
+        find ${SRC_FOLDER}/${srcfol} -mindepth 1
+    done
+    }
+
+is_file_on_disk ()
+    {
+    searched=$1
+    exitcode=1
+    old_IFS=$IFS
+    IFS=$'\n'
+    for srcfol in `cat ${SRC_FOLDERS}` ; do
+        ls ${SRC_FOLDER}/${srcfol}/${searched} &> /dev/null && exitcode=0
+    done
+    IFS=$old_IFS
+    return $exitcode
+    }
+
+is_file_on_phone()
+    {
+    ls ${FOLDER}/"$1" &> /dev/null
+    }
+
+is_file_copied()
+    {
+    grep "^$1$" ${COPIED_FILES} &> /dev/null
+    }
+
+copy_to_phone()
+    {
+    check_file_on_phone "$1" && basename "$1" >> ${COPIED_FILES}
+    }
+action_check()
+    {
+    echo -n $2
+    if [ "$3" == "null" ] ; then
+        if $1 >/dev/null ; then
+            echo " - OK"
+        else
+            echo " - KO"
+            clean_exit
+        fi
+    else
+        if $1 ; then
+            echo " - OK"
+        else
+            echo " - KO"
+            clean_exit
+        fi
+    fi
+    }
+list_files_copied_and_on_phone()
+    {
+    for fod in `files_on_disk` ; do
+        bn=`basename "$fod"`
+        if is_file_on_phone "$bn" && is_file_copied "$bn" ; then
+            check_file_on_phone "$fod"
+        fi
+    done
+    }
+check_file_on_phone()
+    {
+    basename "$1"
+    rsync -P "$1" ${FOLDER}/
+    }
+
+# main
+
+old_IFS=$IFS
+IFS=$'\n'
+echo "FILE LISTING"
+for fod in `files_on_disk`; do
+    bn=`basename "$fod"`
+    if ! is_file_copied "$bn"; then
+        echo "Needs to be copied : $fod"
+    fi
+done
+read -p "-> Hit enter to continue <-"
+action_check "find_phone" "Checking phone connection"
+action_check "mount_tel" "Mounting phone"
+for fod in `files_on_disk` ; do
+    bn=`basename "$fod"`
+    if ! is_file_on_phone "$bn" ; then
+        if ! is_file_copied "$bn"; then
+            copy_to_phone "$fod"
+        fi
+    fi
+done
+echo "CHECKING FILES ON PHONE"
+#list_files_copied_and_on_phone
+IFS=$old_IFS
+action_check "umount_tel" "Unmounting phone"
+
+read -p "-> Finished. Hit enter to exit <-"

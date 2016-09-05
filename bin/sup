@@ -1,0 +1,29 @@
+#!/bin/bash
+
+client=$1
+bddfile=${HOME}/share/Clients/clarisys_log.db
+
+if [ -z $client ]; then
+    rsync bastion:/home/phil/ansible/clarisys_log.db ${bddfile}
+    echo "Usage: sup nomclient"
+    exit 1
+fi
+
+endofquery="from inventory i join value v on (v.inventory_id = i.id) join key k on (k.id=v.key_id) where k.code='mca_version' and v.value is not null and v.value != '' and upper(i.name) like '%${client}%'"
+
+nombre=$(sqlite3 ${bddfile} "select count(distinct(i.id)) ${endofquery}")
+
+echo "NOMBRE : $nombre : NOMBRE"
+
+if [ $nombre -eq 1 ]; then
+    data=$(sqlite3 ${bddfile} "select i.ip, upper(i.name) as name ${endofquery}")
+    ip=$(echo $data | cut -d\| -f 1)
+    nom=$(echo $data | cut -d\| -f 2)
+    echo "$nom : $ip"
+    ssh -t bastion "ssh -A mca@$ip"
+elif [ $nombre -eq 0 ]; then
+    ssh -t bastion "ssh -A mca@$1"
+else
+    sqlite3 ${bddfile} "select 'ssh -t bastion ssh -At mca@' || i.ip || '       # ' || upper(i.name) ${endofquery}"
+fi
+

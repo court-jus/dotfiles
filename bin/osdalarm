@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export DISPLAY=:0
+
+if [ $# -lt 1 ]; then
+    msg="ALARM"
+else
+    msg="$1"
+fi
+
+echo "$msg" | osd_cat -d 0 -s 1 -A left -p middle -f '-*-fixed-*-*-*-*-*-200-*-*-*-*-*-*'
+

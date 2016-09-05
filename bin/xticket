@@ -1,0 +1,7 @@
+#!/bin/bash
+
+num=$(xclip -o)
+
+if numeroticket=`zenity --entry --entry-text="$num" --text "Numéro du ticket" --title "Accès rapide à un ticket" --width 500 | sed -e "s/[^0-9]//g"` ; then
+	google-chrome https://claritick.clarisys.fr/ticket/modify/$numeroticket/
+fi

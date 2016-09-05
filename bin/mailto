@@ -1,0 +1,3 @@
+#!/bin/bash
+
+thunderbird -compose "attachment='$1'"

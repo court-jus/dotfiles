@@ -1,0 +1,3 @@
+#!/bin/bash
+
+git daemon --user-path=src/MCA3/git --export-all --detach

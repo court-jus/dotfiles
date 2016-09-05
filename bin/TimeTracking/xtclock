@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while true; do
+    xterm -title TimeTracking -geometry 211x1+0+0 -cr 'midnight blue' -uc -e "echo -n \$(date); sleep 15"
+done

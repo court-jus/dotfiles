@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/tools/blender/blender-2.58a-linux-glibc27-i686/
+~/tools/blender/blender-2.58a-linux-glibc27-i686/blender

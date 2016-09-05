@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#xterm -title TimeTracking -geometry 239x1+0+0 -e "echo -e \"\e[?25l\" ; $HOME/bin/TimeTracking/TimeTracker.py --run"
+note=$(zenity --title "Time Tracking" --entry --text "Ajouter une note")
+
+if [ "$note" != "" ] ; then
+    $HOME/bin/TimeTracking/TimeTracker.py --note="$note"
+fi

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cat | while read numeroticket
+    do
+    google-chrome https://claritick.clarisys.fr/ticket/modify/$numeroticket/
+    done

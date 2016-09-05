@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PATH=/home/gl/local_test/bin:$PATH
+export LD_LIBRARY_PATH=/home/gl/local_test/lib:$LD_LIBRARY_PATH
+
+/home/gl/src/MCA3/gitest/djserv/webserver.py -c /etc/djserv/mca3.py -p 8889 --debug

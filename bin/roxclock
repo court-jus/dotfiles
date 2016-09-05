@@ -1,0 +1,2 @@
+#!/bin/sh
+exec 0launch 'http://www.kerofin.demon.co.uk/2005/interfaces/Clock' "$@"

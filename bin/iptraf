@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#xterm -geometry 80x26+700+640 -name "iptraf" -e "sudo /usr/sbin/iptraf -d eth0"
+xterm -geometry 80x26+710+640 -name "iptraf" -e "screen -x monitor"
+
+
+#xterm -name "iptraf" -e "sudo /usr/sbin/iptraf" --geometry 80x24

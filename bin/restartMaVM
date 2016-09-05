@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sleep 2 ; ssh root@lost kvmctl reset mcatestgl

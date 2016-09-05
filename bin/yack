@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. ~/perso/yack/.local/bin/activate
+
+python ~/perso/yack/main.py $@

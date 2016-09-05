@@ -1,0 +1,5 @@
+#!/bin/bash
+
+titre=`zenity --entry`
+
+/home/gl/bin/titre "$titre"

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+station=$(ls /home/gl/Musique/DigitallyImported/*pls | zenity --width=800 --list $station_list --column Playlist)
+
+if [ $? -eq 0 ]; then
+    gst123 --list "$station"
+else
+    killall gst123
+fi

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+TOKEN=7d500879dda24a2e4504ce2a0d58ce74
+PROJECT_ID=320529
+
+NAME=$1
+shift
+DESC=$@
+
+curl -H "X-TrackerToken: $TOKEN" -X POST -H "Content-type: application/xml" \
+    -d "<story><story_type>feature</story_type><name>$NAME</name><description>$DESC</description><requested_by>Ghislain LEVEQUE</requested_by></story>" \
+    http://www.pivotaltracker.com/services/v3/projects/$PROJECT_ID/stories

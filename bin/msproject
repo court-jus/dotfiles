@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rdesktop 10.31.254.227 -kfr -g 2800x800

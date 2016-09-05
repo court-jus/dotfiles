@@ -1,0 +1,10 @@
+#!/bin/bash
+
+filename=${1}
+startpattern="${2}"
+nblines=$[ ${3} + 2 ]
+
+awk 'BEGIN {patternfound=0} \
+  /'"${startpattern}"'/ {patternfound++} \
+  patternfound>0 {patternfound++} \
+  patternfound>2 && patternfound <= '$nblines' {print $1}' ${filename}

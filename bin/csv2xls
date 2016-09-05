@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /home/gl/venvs/csv2xls/bin/activate
+
+python /home/gl/src/clientdata/csv2xls.py $@

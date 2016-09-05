@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "stop server"
+killall synergys
+echo "stop client"
+ssh nigoki "killall synergyc"
+
+echo "start server"
+synergys --config ~/.quicksynergy/synergy.conf
+echo "start client"
+ssh nigoki "synergyc courtjus"

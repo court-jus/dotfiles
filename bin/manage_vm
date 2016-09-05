@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh manage_vm_nightly@pengoo

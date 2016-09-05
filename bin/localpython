@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PATH=/home/gl/local/bin:$PATH
+export LD_LIBRARY_PATH=/home/gl/local/lib:$LD_LIBRARY_PATH
+
+

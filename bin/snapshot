@@ -1,0 +1,10 @@
+#!/bin/bash
+
+filename=$(mktemp --tmpdir=$HOME/snapshots snap.XXXXXX.png)
+
+if [ "$1" == "CHOOSE" ] ; then
+    import $filename
+else
+    import -window root $filename
+fi
+eog $filename

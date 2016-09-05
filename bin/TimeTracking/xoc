@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while true; do
+    xterm -title TimeTracking -geometry 239x1+1440+0 -e "echo -e \"\e[?25l\" ; ${HOME}/bin/TimeTracking/oneline_calendar.py; sleep 900" # 15 minutes
+done

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wine  "/home/gl/.PlayOnLinux/wineprefix/Steam/drive_c/Program Files/Steam/steamapps/common/Keep Talking and Nobody Explodes/ktane.exe" 
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#/usr/bin/xlock -remote -nice 19 -mode nose -message "I'm not here, please go away!" &
+xscreensaver-command -lock &

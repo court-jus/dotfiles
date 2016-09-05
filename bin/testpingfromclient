@@ -1,0 +1,16 @@
+#!/bin/bash
+
+IPCLIENT="10.74.12.11"
+IPTEST="10.74.90.2"
+
+while sleep 60 ; do
+    statut=$(ssh ghislain@10.31.254.14 "ssh mca@$IPCLIENT 'ping -c1 $IPTEST'" 2>&1 | grep received | awk '{print $4}')
+    if [ "$statut" != "0" ]
+        then
+        bin/alerte.sh bionecyping now
+        exit
+    else
+        echo "still no ping"
+    fi
+done
+

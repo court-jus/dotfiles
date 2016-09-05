@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd "/home/gl/.wine/drive_c/Program Files/Astral Masters/"
+wine masters.exe

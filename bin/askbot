@@ -1,0 +1,3 @@
+cd /home/gl/tools/askbotdir
+. /home/gl/src/askbot-devel/.local/bin/activate
+python manage.py runserver 10.31.254.25:8745

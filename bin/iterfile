@@ -1,0 +1,3 @@
+Itérer un fichier proprement avec zsh
+
+array_of_lines=("${(@f)$(awk '{print $1}' commits_67)}")

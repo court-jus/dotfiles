@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export TZ="Europe/Paris"
+GC=/home/gl/bin/gcalcli
+REM_DELAY=20
+# First, remind me of incoming events :
+$GC $@ remind $REM_DELAY
+
+# Then display my calendar
+$GC $@ calw 4

@@ -1,0 +1,2 @@
+psql -c "drop database prod_fontenay_avec_fichiers_backup"
+psql -c "create database prod_fontenay_avec_fichiers_backup template prod_fontenay_avec_fichiers"

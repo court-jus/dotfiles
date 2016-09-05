@@ -1,0 +1,9 @@
+#!/bin/bash
+
+MAX=100
+
+filename=$1
+
+mv ${filename} ${filename}.orig
+autopep8 --max-line-length=${MAX} ${filename}.orig > ${filename}
+git add -p ${filename}

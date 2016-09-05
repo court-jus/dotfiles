@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /home/gl/IPythonNTB
+/home/gl/anaconda3/bin/ipython3 notebook

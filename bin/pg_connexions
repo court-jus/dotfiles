@@ -1,0 +1,3 @@
+#!/bin/bash
+
+psql auto auto -t -c "select procpid from pg_stat_activity" | xargs ps -o pid,command h | sed -e "s/.*(\([0-9]\+\)).*/\1/" > /tmp/pgports ;  sudo netstat -laputen ŋ| awk '{print $4,$9}' | grep -f /tmp/pgports | cut -d/ -f1 | awk '{print $2}' | xargs ps -o pid,command h

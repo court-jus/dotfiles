@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DESKTOP=$1
+TAB=$2
+CHR=$(xdotool search --all --desktop ${DESKTOP} --name 'Google Chrome')
+xdotool windowactivate ${CHR}
+xdotool key "CTRL+${TAB}"
+xdotool key "F5"

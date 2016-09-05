@@ -1,0 +1,4 @@
+#!/bin/bash
+
+date | osd_cat -d 2 -s 1 -A left -p middle -f '-*-fixed-*-*-*-*-*-200-*-*-*-*-*-*'
+

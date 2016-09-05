@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#cd ~/src/MCA3/git
+
+git fetch -p --all ; git branch -va #; git remote -v update

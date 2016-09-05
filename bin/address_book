@@ -1,0 +1,23 @@
+#!/bin/bash
+
+ADRBOOKFILE=~/share/address_book
+
+tel=$(zenity --title="Téléphoner" --text="Choisissez un correspondant à appeler ou ajoutez un correspondant à la liste" --width=800 --height=600 --list --ok-label="Appeler" --cancel-label="Ajouter" --column=Nom --column=Telephone --column=Groupe --print-column=2 $(cat $ADRBOOKFILE))
+
+if [ $? -eq 1 ]; then
+	ajout=$(zenity \
+		--title="Ajout d'un correspondant"\
+		--text="Saisissez les coordonnées du correspondant à ajouter"\
+		--list\
+		--editable\
+		--ok-label="Ajouter"\
+		--column=Nom\
+		--column=Telephone\
+		--column=Groupe\
+		--print-column=ALL\
+		--separator="  "\
+		 "")
+	echo $ajout >> $ADRBOOKFILE
+else
+	${HOME}/bin/scriptel/call_number.py "$tel"
+fi

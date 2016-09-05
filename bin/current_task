@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -X nigoki "hamster-cli list" | tail -n1 | cut -d\| -f2

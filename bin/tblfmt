@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+# -*- coding: ISO-8859-15 -*-
+
+import sys
+from optparse import OptionParser
+
+parser = OptionParser()
+parser.add_option("-f","--keep-first", action="store", dest="keepfirst", help="Keep the first spacing (to keep indent, user -f1).",  type="int", default=0)
+parser.add_option("-l","--keep-last",  action="store", dest="keeplast",  help="How many spaces to parse (keep the rest unchanged).", type="int", default=0)
+(options,args) = parser.parse_args()
+
+margin   =  2
+lines    =  []
+columns  =  []
+
+for line in sys.stdin:
+    thisline = []
+    line = line.replace("\t"," ")
+    #if options.keepfirst != 0:
+    #    thisline.append(' '.line.strip().split(" ")[:options.keepfirst])
+    for index, word in enumerate(line.strip().split(" ")):
+        word = word.strip()
+        if word != '':
+            thisline.append(word)
+        if len(columns) <= index:
+            columns.append(len(word))
+        elif len(word) > columns[index]:
+            columns[index] = len(word)
+    lines.append(thisline)
+
+format = ""
+for col in columns:
+    format += "%-" + str(col+margin) + "s"
+for line in lines:
+    while len(line) < len(columns):
+        line.append('')
+    print (format % tuple(line)).rstrip()

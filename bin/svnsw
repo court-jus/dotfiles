@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LANG=C
+
+
+url=`svn info | grep "^URL" | cut -d: -f2-`
+username=$1
+newurl=`echo $url | sed -e "s/\/\/.*@/\/\/$username@/"`
+
+svn sw --relocate $url $newurl

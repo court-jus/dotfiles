@@ -1,0 +1,52 @@
+#!/bin/bash
+
+export DISPLAY=:0
+WHEREAMI=${HOME}/var/whereami
+
+gotonigoki()
+    {
+    xdotool key ctrl+super+alt+Left
+    echo nig > $WHEREAMI
+    }
+gotocourtjus1()
+    {
+    xdotool key ctrl+super+alt+Right
+    xdotool mousemove 500 500
+    echo cj1 > $WHEREAMI
+    }
+gotocourtjus2()
+    {
+    xdotool key ctrl+super+alt+Right
+    xdotool mousemove 1500 500
+    echo cj2 > $WHEREAMI
+    }
+
+whereami()
+    {
+    cat $WHEREAMI
+    }
+givefocus()
+    {
+    xwit -focus -current
+    }
+
+if [ "$1" == "LEFT" ] ; then
+
+if [ $(whereami) == "cj2" ] ; then
+    gotocourtjus1
+    givefocus
+else
+    gotonigoki
+fi
+
+else
+
+if [ $(whereami) == "nig" ] ; then
+    gotocourtjus1
+    givefocus
+else
+    gotocourtjus2
+    givefocus
+fi
+
+fi

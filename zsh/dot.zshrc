@@ -60,3 +60,23 @@ export GOROOT=/home/gl/src/go-dist
 export GOPATH=/home/gl/src/go
 export PATH=$PATH:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin:/home/gl/anaconda3/bin
 export PAGER="less -S"
+
+###-begin-yo-completion-###
+_yo_completion () {
+  local cword line point words si
+  read -Ac words
+  read -cn cword
+  let cword-=1
+  read -l line
+  read -ln point
+  si="$IFS"
+  IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                     COMP_LINE="$line" \
+                     COMP_POINT="$point" \
+                     yo-complete completion -- "${words[@]}" \
+                     2>/dev/null)) || return $?
+  IFS="$si"
+}
+compctl -K _yo_completion yo
+###-end-yo-completion-###
+

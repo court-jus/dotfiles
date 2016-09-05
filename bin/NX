@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#ssh gl@nx.clarisys.fr -p227
+/usr/NX/bin/nxclient

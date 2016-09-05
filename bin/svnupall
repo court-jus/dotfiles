@@ -1,0 +1,78 @@
+# #!/bin/bash
+#
+# Met à jour mes copies de travail locales
+
+workcopydir=/home/gl/src/clarisys
+
+for workcopy in CAUTO svn_MCA3_complet MCA2
+    do
+    svn up --accept=postpone ${workcopydir}/${workcopy} | /home/gl/bin/mylogger $0
+    done
+
+#
+#
+# update (up): Actualise la copie de travail par rapport au dépôt.
+# usage : update [CHEMIN...]
+# 
+#   La copie de travail est actualisée à la révision HEAD ou à la révision
+#   précisée par l'option -r.
+#   L'opération effectuée sur chaque objet est donnée par un caractère :
+#     A  ajouté
+#     D  supprimé
+#     U  modifié
+#     C  en conflit
+#     G  fusionné
+#     E  existant
+# 
+#   La première colonne concerne l'objet, la seconde ses propriétés.
+#   Un 'B' en troisième colonne indique qu'un verrou a été volé ou cassé.
+# 
+#   Si l'option --force est utilisée, c'est un peu subtile et compliqué...
+#   La collision d'un objet non versionné dans la copie de travail et
+#   d'un homonyme versionné dans le dépôt n'occasionne pas automatiquement
+#   un échec lors de l'actualisation (switch). En effet, si l'objet gênant
+#   est de même type (fichier ou répertoire) que l'objet homonyme du dépôt,
+#   il devient alors versionné, mais garde le même contenu.
+#   Cela signifie qu'un sous-objet d'un répertoire gênant non versionné
+#   peut lui-même être gênant et devenir versionné.
+#   Pour les fichiers, toute différence est considérée comme une
+#   modification locale à la copie de travail.
+#   Toutes les propriétés stockées dans le dépôt sont appliquées aux objets.
+#   Les objets gênant la mise à jour sont marqués d'un 'E' en première colonne.
+# 
+#   Utiliser l'option --set-depth pour définir une nouvelle profondeur pour
+#   la copie de travail cible de l'opération.  La profondeur peut seulement être
+#   augmenté dans la version actuelle.  
+# 
+# Options valides:
+#   -r [--revision] ARG      : ARG (peut aussi être une étendue ARG1:ARG2)
+#                      L'argument d'une révision peut être :
+#                        NUMÉRO       numéro de la révision
+#                        '{' DATE '}' révision disponible à cette date
+#                        'HEAD(       dernière révision du dépôt
+#                        'BASE'       rév. de base de la copie de travail
+#                        'COMMITTED'  dernière propagation à ou avant BASE
+#                        'PREV'       révision juste avant COMMITTED
+#   -N [--non-recursive]     : obsolète : essayer --depth=files ou --depth=immediates
+#   --depth ARG              : limite l'opétioan à cette profondeur (depth empty/files/
+#                  immediates/infinity) en argument
+#   --set-depth ARG          : fixe la profondeur de la copie de travail -- 'empty' (vide),
+#      'files' (fichiers), 'immediates' (immédiat) ou 'infinity' (infini)
+#   -q [--quiet]             : n'affiche rien, ou seulement des informations résumées
+#   --diff3-cmd ARG          : utilise ARG comme commande de fusion
+#   --force                  : force l'exécution de l'opération
+#   --ignore-externals       : ignore les références externes
+#   --changelist ARG         : opère seulement sur les membres de la liste de changements ARG
+#                                    [ alias : --cl]
+#   --editor-cmd ARG         : utilise ARG comme éditeur externe
+#   --accept ARG             : précise l'action de la résolution de conflit
+#     ('postpone', 'base', 'mine-full', 'theirs-full',
+#      'edit', 'launch')
+# 
+# Options globales :
+#   --username ARG           : précise le nom d'utilisateur ARG
+#   --password ARG           : précise le mot de passe ARG
+#   --no-auth-cache          : ne conserve pas les éléments d'authentification
+#   --non-interactive        : pas de demande interactive
+#   --config-dir ARG         : fichiers de configuration dans ce répertoire
+# 

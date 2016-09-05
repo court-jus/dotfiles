@@ -129,6 +129,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # TELEPHONE
 bindsym $mod+t exec "/home/gl/bin/scriptel/headset.py"
 bindsym $mod+Shift+t exec "/home/gl/bin/scriptel/call_number"
+bindsym $mod+Ctrl+t exec "/home/gl/bin/address_book"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

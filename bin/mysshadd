@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export SSH_ASKPASS=/usr/bin/ssh-askpass-fullscreen
+
+ssh-add
+
+sshfs bastion: /home/gl/mnt/bastion/
+sshfs 10.31.254.10:/home/echange /home/gl/mnt/echange/

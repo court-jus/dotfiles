@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xulrunner-1.9.2 ~/tools/Pencil/application.ini

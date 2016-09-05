@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rsync -a --delete /home/gl/Dropbox/data/allonboard /home/gl/public_html/

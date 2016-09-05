@@ -1,0 +1,3 @@
+#!/bin/bash
+
+google-chrome https://claritick.clarisys.fr/ticket/modify/$1/

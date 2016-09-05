@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xvnc4viewer -passwd .vnc/passwd 10.31.254.41:5901

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cmd="svn up"
+#cmd="echo"
+
+cd ${HOME}/src
+
+for folder in $(ls | grep -vf .svnupignore)
+    do
+    cd ${HOME}/src/${folder}
+    echo $folder
+    if [ -f .svnupignore ] ; then
+        liste=$(ls | grep -vf .svnupignore)
+    else
+        liste=$(ls)
+    fi
+    $cmd $liste
+    done

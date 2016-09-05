@@ -1,0 +1,7 @@
+#!/bin/bash
+num=$(xclip -o)
+num=${num// /}
+num=${num//./}
+numdigits=$(wc -c <<< $num)
+[ $numdigits -gt 5 ] && num="0$num"
+[[ $num =~ ^[0-9]+$ ]] && $(dirname $0)/call_number.py "$num"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ~/src/MCA3/run
+
+gitk --all

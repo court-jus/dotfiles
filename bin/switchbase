@@ -1,0 +1,23 @@
+#!/bin/bash
+
+sudo /etc/init.d/apache2 stop
+#sudo /etc/init.d/djserv stop
+sudo /etc/init.d/cm_agent.sh stop
+sudo /etc/init.d/cm_monitor.sh stop
+
+FILELIST=${HOME}/etc/switchbase.list
+CURRENTBASE=$(awk '$1 == "DATABASE_NAME" {gsub(/'"'"'/, "", $3); print $3}' /home/gl/src/clarisys/MCA3/local_settings.py)
+NEWBASE=$1
+
+echo "Switching from [${CURRENTBASE}] to [${NEWBASE}]"
+
+for file in $(cat $FILELIST) ; do
+    echo "File $file"
+    sed -i.bak -e "s/$CURRENTBASE/$NEWBASE/g" $file
+done
+
+sudo /etc/init.d/apache2 start
+#sudo /etc/init.d/djserv start
+sudo /etc/init.d/cm_monitor.sh start
+sudo /etc/init.d/cm_agent.sh start
+

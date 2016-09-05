@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xclip -o | /home/gl/bin/ticketlist

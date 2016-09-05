@@ -1,0 +1,1 @@
+/home/gl/Jeux/PrintAndPlay/bgtools/rules/A5.py

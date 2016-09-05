@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while true; do
+    xterm -title TimeTracking -geometry 211x1+0+0 -e "echo -e \"\e[?25l\" ; $HOME/bin/TimeTracking/TimeTracker.py --run"
+done

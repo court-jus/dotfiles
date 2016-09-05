@@ -1,0 +1,1 @@
+montage -density 300  -geometry 1754x2480+0+0 -tile 2x1 $@

@@ -1,0 +1,4 @@
+
+    xdotool getactivewindow windowsize 2880 850
+    xdotool getactivewindow windowmove 0 22 windowraise mousemove --window %1 10 11
+

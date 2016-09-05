@@ -1,0 +1,40 @@
+#!/bin/bash
+
+dbhost=localhost
+dbuser=auto
+dbname=auto
+
+table_id=$1
+delay=$2
+
+get_lock_pids()
+    {
+    psql -h $dbhost -U $dbuser -d $dbname -AtF, -c "select pid from pg_locks where relation = $table_id" | sort | uniq
+    }
+
+list_process()
+    {
+    ps hww -p $(get_lock_pids) 2>/dev/null
+    }
+
+list_local_process()
+    {
+    list_process | grep "127.0.0.1"
+    }
+
+list_local_process_ports()
+    {
+    list_local_process | sed -e "s/.*postgres: \w\+ \w\+ 127.0.0.1(\([0-9]\+\)).*/\1/"
+
+    }
+list_distant_process()
+    {
+    list_process | grep -v "127.0.0.1"
+    }
+
+tmpfile=`mktemp -t`
+
+list_distant_process
+
+list_local_process_ports > $tmpfile
+netstat -aputn | awk '{print $4,$7}' | grep -f $tmpfile | awk '{print $2}' | grep "/" | sed -e "s/\([0-9]\+\)\/.*/-p \1/"

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# != 1 ]; then
+    echo "Cherche des accents dans un fichier"
+    echo "Usage : accent NOMFICHIER"
+    exit 1
+fi
+
+nomfichier="$1"
+temp=`mktemp -t`
+
+for codec in utf-8 iso-8859-15 ; do 
+    if cat "$nomfichier"| unaccent $codec > $temp; then
+        diff $temp "$nomfichier" 
+    fi
+done
+
+rm -f $temp

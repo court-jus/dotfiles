@@ -1,0 +1,20 @@
+#!/bin/bash
+
+filename=${1}
+branch=${2}
+startpattern="${3}"
+nblines=$[$(tput lines) - 5]
+termwidth=$(tput cols)
+
+for commit in $(git log --reverse --pretty=format:%H ${branch} -- ${filename})
+    do
+    clear
+    git show --pretty=format:"%H   %an   %s" ${commit} | awk 'NR == 1 {printf "%-'$termwidth'.'$termwidth's\n", $0}'
+    git show ${commit}:${filename} | \
+        awk 'BEGIN {patternfound=0;printedlines=0}\
+          /'"${startpattern}"'/ {patternfound++} \
+          patternfound>0  && printedlines <= '$nblines' {printf "%5d\t%s\n",NR,$0; printedlines++}\
+          END {if (patternfound==0) {print "## Pattern not found on this revision"}}' # | \
+        #pygmentize -O encoding=utf-8 -l py
+    read -p "Hit Enter"
+    done

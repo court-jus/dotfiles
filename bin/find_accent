@@ -1,0 +1,6 @@
+#!/bin/bash
+
+file=$1
+<$file unaccent utf-8 | diff - $file
+<$file unaccent ascii | diff - $file
+<$file unaccent iso-8859-15 | diff - $file

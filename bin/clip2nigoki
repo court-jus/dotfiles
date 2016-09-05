@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ $# -gt 0 ] ; then
+    echo "$@" | ssh nigoki "cat > /tmp/clipcj"
+else
+    ssh nigoki "cat > /tmp/clipcj"
+fi

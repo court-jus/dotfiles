@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+# -*- coding: ISO-8859-15 -*-
+
+from feedparser import parse
+import pprint
+import shelve
+import datetime
+import os
+import urllib2
+import time
+
+DATADIR="/home/gl/var/podcast"
+block_size = 4096
+
+ppp = pprint.PrettyPrinter().pprint
+
+myfeed = parse("http://podcast.rtl.fr/grossestetes.xml")
+
+for e in myfeed['entries']:
+    print e['title']
+    (y,m,d)=e['updated_parsed'][:3]
+    date = datetime.date(y,m,d)
+    if os.path.exists(os.path.join(DATADIR,str(date))):
+        print "exists"
+    else:
+        attach = e['enclosures'][0]
+        url = attach['href']
+        data = urllib2.urlopen(url)
+        headers = data.info()
+        size = int(headers['Content-Length'])
+        try:
+            f = open(os.path.join(DATADIR,str(date)),"wb")
+            i = 0
+            now = time.time()
+            while i < size:
+                f.write (data.read(block_size))
+                i += block_size
+                print "\r %d/%d %7.2f ko/s" % (i,size,(i/(time.time()-now))/1000),
+            print "\r",i,"/",size
+            print
+            f.close()
+        except:
+            print "Interruption, suppression du fichier"
+            os.unlink(os.path.join(DATADIR,str(date)))
+        finally:
+            data.close()

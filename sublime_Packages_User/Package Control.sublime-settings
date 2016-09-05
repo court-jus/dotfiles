@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"AutoPEP8",
+		"Center Comment",
 		"Git Conflict Resolver",
 		"GitCommitMsg",
 		"GitGutter",
@@ -26,9 +27,11 @@
 		"SublimeLinter-gjslint",
 		"SublimeLinter-html-tidy",
 		"SyncedSideBar",
+		"Table Cleaner",
 		"UnicodeMath",
 		"View In Browser",
 		"WakaTime",
+		"WordCount",
 		"Wrap Plus"
 	]
 }

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "$@" >> /tmp/beepmail
+/home/gl/bin/osdalarm "T'as un beep" &

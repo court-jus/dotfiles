@@ -1,0 +1,29 @@
+#!/bin/bash
+
+SSH=/usr/bin/ssh
+MD5=/usr/bin/md5sum
+WGET=/usr/bin/wget
+CT_IP="127.0.0.1"
+CT_PORT="80"
+CT_ROOT="/telem"
+
+INTERVENANT="Ghislain LEVEQUE"
+
+IP_DISTANTE=`echo $@ | sed -e "s/.*[^0-9]\(\([0-9]\{1,3\}\.\)\{3\}[0-9]\{1,3\}\).*/\1/"`
+
+echo $IP_DISTANTE
+echo $INTERVENANT
+
+CLE=`echo -n "$INTERVENANT $IP_DISTANTE" | $MD5 | awk '{print $1}'`
+
+echo "[$CLE]"
+
+read -p "Raison de la connexion (facultatif) > " RAISON
+
+if ID_CONNEXION_DISTANTE=`$WGET -O - -o /tmp/sshconnectlog.err --header "CTintervenant: $INTERVENANT" --header "CTraison: $RAISON" --header "CTipserveur: $IP_DISTANTE" --header "CTcle: $CLE" http://${CT_IP}:${CT_PORT}${CT_ROOT}/connectlog/` ; then
+    echo "Connexion enregistrée sous le numéro [$ID_CONNEXION_DISTANTE]"
+    $SSH $@
+    wget -O /dev/null -o /tmp/sshconnectlog.err --header "CTintervenant: $INTERVENANT" --header "CTraison: $RAISON" --header "CTipserveur: $IP_DISTANTE" --header "CTcle: $CLE" http://${CT_IP}:${CT_PORT}${CT_ROOT}/connectlog/close/${ID_CONNEXION_DISTANTE}/ && echo "Connexion fermée sur ClariTelem" || echo "Erreur de fermeture de la connexion sur ClariTelem : \n `cat /tmp/sshconnectlog.err`"
+else
+    echo "Erreur d'enregistrement de la connexion : \n `cat /tmp/sshconnectlog.err`"
+fi

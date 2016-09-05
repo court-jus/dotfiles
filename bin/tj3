@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export PATH=/var/lib/gems/1.8/bin:$PATH
+export TASKJUGGLER_DATA_PATH=/var/lib/gems/1.8/gems/taskjuggler-0.0.11
+
+tj3 $@
+
+
+# # #!/usr/bin/ruby
+# # ENV['TASKJGGLER_DATA_PATH'] = "#{ENV['HOME']}/tools/TaskJuggler"
+# # $:.unshift "#{ENV['TASKJGGLER_DATA_PATH']}/lib/"
+# # require File.basename(__FILE__)

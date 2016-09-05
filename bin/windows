@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/bin/rdesktop -xl -ughislain -g 1400x850 -kfr 10.31.254.227
+

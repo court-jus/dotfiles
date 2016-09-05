@@ -1,0 +1,9 @@
+#!/bin/bash
+
+infile=$1
+index=$2
+
+for numeroticket in $(awk '$'"$index"' ~ /^[0-9]+$/ {print $'"$index"'}' "${infile}")
+    do
+    google-chrome https://claritick.clarisys.fr/ticket/modify/$numeroticket/
+    done

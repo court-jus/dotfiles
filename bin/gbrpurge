@@ -1,0 +1,11 @@
+#!/bin/bash
+
+OLD_IFS=${IFS}
+IFS=$'\n'
+for brinfo in $(git branch -va) ; do
+	brname=$(echo $brinfo | awk '{print $1}')
+	cohash=$(echo $brinfo | awk '{print $2}')
+	if gwh ${cohash} | grep stable; then
+		echo "Pour la branche $brname ($cohash)"
+	fi
+done
