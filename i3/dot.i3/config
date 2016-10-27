@@ -46,7 +46,8 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+l exec i3lock
 bindsym $mod+Shift+g exec google-chrome
-bindsym $mod+Ctrl+Mod1+Return exec /opt/sublime_text/sublime_text
+bindsym $mod+Ctrl+Mod1+Return exec /usr/bin/atom
+bindsym $mod+Ctrl+Mod1+BackSpace exec /usr/bin/keepass2 --auto-type
 bindsym Mod1+F2 exec /usr/bin/grun
 bindsym --release Print exec /home/gl/bin/myscrot -s
 bindsym Shift+Print exec /home/gl/bin/scrot/lastscrot.sh
@@ -181,17 +182,18 @@ bar {
         }
 }
 
-exec /home/gl/bin/mysshadd
+# exec /home/gl/bin/mysshadd
 exec /usr/local/bin/pa-applet
 exec /usr/bin/xautolock -locker /usr/bin/i3lock
-exec /home/gl/.screenlayout/gl.sh
-exec /usr/bin/google-musicmanager
-exec /usr/bin/megasync
-exec /usr/bin/pidgin
-exec /usr/bin/icedove
+exec /home/gl/.screenlayout/ITrust.sh
+# exec /usr/bin/google-musicmanager
+# exec /usr/bin/megasync
+# exec /usr/bin/pidgin
+# exec /usr/bin/icedove
 exec /usr/bin/xset m 4/1
-exec /usr/bin/Esetroot /home/gl/share/backgrounds/trialscreen/black.png
-exec /usr/bin/python /home/gl/bin/FolderWatch/main.py
+exec /usr/bin/xsetroot -solid "#002b36"
+# exec /usr/bin/python /home/gl/bin/FolderWatch/main.py
+exec /usr/bin/nm-applet
 
 workspace_layout stacking
 

@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-#call vundle#rc()
-#Plugin 'gmarik/vundle'
+" call vundle#rc()
+" Plugin 'gmarik/vundle'
 filetype plugin indent on
 
 syn on
@@ -19,7 +19,6 @@ set encoding=utf-8
 set expandtab
 set hls
 set ruler
-set rulerformat=%55(%f\ %{GitBranchInfoString()}\ %{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 
 au BufNewFile,BufRead *.go setf go
 
@@ -105,4 +104,4 @@ imap <C-q> <C-]>
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 
 
-#Bundle 'wakatime/vim-wakatime'
+" Bundle 'wakatime/vim-wakatime'

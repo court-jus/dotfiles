@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ip=$(docker inspect \
+      --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
+      $1)
+
+if [ -z $2 ]; then
+  echo "$ip"
+else
+  echo "$ip $2"
+fi

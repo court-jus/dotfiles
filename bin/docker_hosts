@@ -1,0 +1,13 @@
+#!/bin/bash
+
+grep -v "## Docker container$" /etc/hosts
+for container in $(docker-compose ps | grep "\<Up\>" | awk '{print $1}')
+  do
+
+  ip=$(docker inspect \
+        --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
+        $container)
+
+  echo "$ip $container  ## Docker container"
+
+  done
