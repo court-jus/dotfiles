@@ -1,0 +1,6 @@
+#!/bin/bash
+
+service=$1
+shift
+cd /home/gl/src/ikare/ikare-meta/docker/
+docker-compose exec $service supervisorctl $@

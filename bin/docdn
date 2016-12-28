@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /home/gl/src/ikare/ikare-meta/docker/
+docker-compose down
+

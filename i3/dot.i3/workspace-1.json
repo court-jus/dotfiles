@@ -1,0 +1,60 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.7,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1058,
+               "width": 1916,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Boîte de réception (1) - gleveque@itrust.fr - Messagerie ITrust - Mozilla Firefox",
+            "percent": 1,
+            "swallows": [
+               {
+               "class": "^Firefox$",
+               "title": "^Boîte\\ de\\ réception"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 725,
+               "width": 1356,
+               "x": 0,
+               "y": 0
+            },
+            "name": "#ikare",
+            "percent": 1,
+            "swallows": [
+               {
+               "class": "^Pidgin$",
+               "window_role": "^conversation$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

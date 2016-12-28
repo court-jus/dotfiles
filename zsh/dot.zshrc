@@ -58,7 +58,7 @@ function precmd {
 # Customize to your needs...
 export GOROOT=/home/gl/src/go-dist
 export GOPATH=/home/gl/src/go
-export PATH=$PATH:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin:/home/gl/anaconda3/bin
+export PATH=$PATH:/home/gl/node_modules/.bin/:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin:/home/gl/anaconda3/bin
 export PAGER="less -S"
 
 ###-begin-yo-completion-###
@@ -79,4 +79,5 @@ _yo_completion () {
 }
 compctl -K _yo_completion yo
 ###-end-yo-completion-###
-
+#
+bindkey '^R' history-incremental-pattern-search-backward

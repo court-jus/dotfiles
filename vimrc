@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/vundle/
 filetype plugin indent on
 
 syn on
-colorscheme solarized
+colorscheme darkblue
 set background=dark
 set nocompatible
 set nomousehide

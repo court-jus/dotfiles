@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
-import xmlrpclib
+import pdb  # noqa
 import ssl
 import sys
+import xmlrpclib
+
+api_host = "docker_api_1"
+
+if len(sys.argv) > 1:
+    api_host = sys.argv[1]
 
 kwargs = {}
 if (
@@ -12,8 +18,10 @@ if (
     kwargs["context"] = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
 
 p = xmlrpclib.ServerProxy(
-    "https://admin:admin@docker_api_1:8000/rpc2",
+    "https://admin:admin@{}:8000/rpc2".format(api_host, ),
     **kwargs
 )
-me = p.user.me()
-print("OK, welcome {}".format(me['login']))
+
+print(p.user.me())
+print(p.host.find("in_group(16) and updated_at > '20161225'"))
+print(xmlrpclib.dumps(("in_group(16) and updated_at > '20161225'",),"host.find"))

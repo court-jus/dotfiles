@@ -1,0 +1,15 @@
+#!/bin/bash
+
+capslock=0
+numlock=0
+
+if xset q | grep "LED mask: \+0\+2\>" > /dev/null; then
+    numlock=1
+elif xset q | grep "LED mask: \+0\+1\>" > /dev/null; then
+    capslock=1
+elif xset q | grep "LED mask: \+0\+3\>" > /dev/null; then
+    capslock=1
+    numlock=1
+fi
+
+echo $capslock $numlock

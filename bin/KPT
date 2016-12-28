@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# echo $@ | tee -a /tmp/KPT.log
+
+if [ "$1" == "VPN" ]; then
+    echo "$2" > /home/gl/OpenVPNconfig/pfile
+    echo "$3" >> /home/gl/OpenVPNconfig/pfile
+    chmod 600 /home/gl/OpenVPNconfig/pfile
+elif [ "$1" == "RMVPN" ]; then
+    rm -f /home/gl/OpenVPNconfig/pfile
+fi
+

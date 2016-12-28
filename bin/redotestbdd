@@ -1,0 +1,5 @@
+#!/bin/bash
+
+psql -h docker_bdd_1 -U ikareapi -d ikareapi -c "drop database ikaretest"
+psql -h docker_bdd_1 -U ikareapi -d ikareapi -c "create database ikaretest"
+psql -h docker_bdd_1 -U ikareapi -d ikaretest -f /home/gl/src/ikare/ikare-api/install/schema.sql

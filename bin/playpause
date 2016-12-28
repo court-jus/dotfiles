@@ -1,0 +1,35 @@
+#!/bin/bash
+
+activew=$(xdotool getactivewindow)
+actived=$(xdotool get_desktop)
+
+if mpc | grep "^\[playing\]" ; then
+    app="mpd"
+elif mpc | grep "^\[paused\]" ; then
+    app="mpd"
+elif pacmd list-sink-inputs | head -1 | grep "^0"; then
+    # on est en pause
+    app=$(cat $HOME/.musicapp)
+elif pacmd list-sink-inputs | grep -i "^\s*application.name.*Chrome"; then
+    app="Chrome"
+fi
+
+echo -n ${app} > $HOME/.musicapp
+
+
+if [ ${app} = "Chrome" ]; then
+    activet=$(chromix-too ls active | awk '{print $1}')
+    targetd=$(xdotool get_desktop_for_window $(xdotool search --name "Google Chrome"))
+    xdotool set_desktop ${targetd}
+    if chromix-too ls audible; then
+        chromix-too focus audible
+    else
+        chromix-too focus pinned
+    fi
+    xdotool key space
+    chromix-too focus ${activet}
+    xdotool windowactivate ${activew}
+    xdotool set_desktop ${actived}
+elif [ ${app} = "mpd" ]; then
+    mpc toggle
+fi

@@ -1,0 +1,47 @@
+{
+    "404 list": {},
+    "finish": true,
+    "description": "contains all data get by crawler",
+    "mails": [],
+    "vulns": {
+        "XSS": {
+            "POST": [],
+            "GET": []
+        },
+        "LFI": {
+            "POST": [],
+            "GET": []
+        },
+        "SQLi": {
+            "POST": [],
+            "GET": []
+        },
+        "FD": [],
+        "RFI": {
+            "POST": [],
+            "GET": []
+        },
+        "DT": {
+            "POST": [],
+            "GET": []
+        }
+    },
+    "results": {
+        "NbMails": 0,
+        "NbLinks": 13,
+        "NbUrlOutOfDomain": 108,
+        "NbUrl": 114
+    },
+    "__class__": "results",
+    "environment": {
+        "options": {
+            "xss": true,
+            "lfi": true,
+            "depth": null,
+            "threads": 2,
+            "rfi": true,
+            "dt": true
+        },
+        "start_url": "http://www.arcanadynamicloud.com/"
+    }
+}
