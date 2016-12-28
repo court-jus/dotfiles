@@ -235,6 +235,7 @@ pciutils
 perl
 perl-base
 pidgin
+pmount
 postgresql
 procmail
 procps
