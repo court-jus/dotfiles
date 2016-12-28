@@ -1,0 +1,11 @@
+#!/bin/bash
+
+workdir=/home/gl/dotfiles/InstalledPackages/
+
+apt-mark showmanual > ${workdir}/$(hostname)
+
+if git -C ${workdir} diff $(hostname) | grep . > /dev/null; then
+    git -C ${workdir} add $(hostname)
+    git -C ${workdir} commit -m "Manually installed packages on $(hostname) changed."
+    git -C ${workdir} push
+fi
