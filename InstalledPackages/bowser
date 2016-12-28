@@ -53,6 +53,7 @@ dpkg
 dropbox
 e2fslibs
 e2fsprogs
+eog
 evince
 exim4
 exim4-base
@@ -97,6 +98,7 @@ inkscape
 insserv
 install-info
 installation-report
+iotop
 iproute2
 iptables
 iputils-ping
@@ -288,6 +290,8 @@ wget
 whiptail
 whois
 xautolock
+xdotool
 xz-utils
+zenity
 zlib1g
 zsh
