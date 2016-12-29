@@ -64,6 +64,7 @@ findutils
 ftp
 gcc-4.8-base
 gcc-4.9-base
+genisoimage
 gettext-base
 gimp
 gmpc
@@ -72,6 +73,7 @@ gnome-terminal
 gnupg
 gnupg2
 google-chrome-stable
+google-talkplugin
 gparted
 gpgv
 grep
@@ -133,6 +135,7 @@ libdebconfclient0
 libdevmapper1.02.1
 libdns-export100
 libestr0
+libffi-dev
 libffi6
 libgcc1
 libgcrypt20
