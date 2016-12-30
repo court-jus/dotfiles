@@ -262,6 +262,7 @@ software-properties-common
 ssh-askpass-fullscreen
 startpar
 sudo
+system-config-kickstart
 systemd
 systemd-sysv
 sysv-rc
