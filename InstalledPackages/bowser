@@ -212,6 +212,7 @@ m4
 man-db
 manpages
 mawk
+md5deep
 meld
 mime-support
 mlocate
@@ -226,6 +227,7 @@ ncurses-term
 net-tools
 netbase
 netcat-traditional
+netpbm
 network-manager-gnome
 nfacct
 nfs-common
@@ -262,6 +264,7 @@ software-properties-common
 ssh-askpass-fullscreen
 startpar
 sudo
+syslinux-utils
 system-config-kickstart
 systemd
 systemd-sysv
@@ -296,6 +299,7 @@ whiptail
 whois
 xautolock
 xdotool
+xorriso
 xz-utils
 zenity
 zlib1g
