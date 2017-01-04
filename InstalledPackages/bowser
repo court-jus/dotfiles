@@ -64,6 +64,7 @@ findutils
 ftp
 gcc-4.8-base
 gcc-4.9-base
+gcc-5
 genisoimage
 gettext-base
 gimp
@@ -213,6 +214,7 @@ man-db
 manpages
 mawk
 md5deep
+mediatomb
 meld
 mime-support
 mlocate
@@ -221,6 +223,7 @@ mtr
 multiarch-support
 mutt
 nano
+ncdu
 ncurses-base
 ncurses-bin
 ncurses-term
@@ -231,6 +234,8 @@ netpbm
 network-manager-gnome
 nfacct
 nfs-common
+ntp
+ntpdate
 openssh-client
 openvpn
 passwd
