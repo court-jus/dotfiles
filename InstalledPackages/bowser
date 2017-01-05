@@ -234,6 +234,9 @@ netpbm
 network-manager-gnome
 nfacct
 nfs-common
+nodejs
+nodejs-legacy
+npm
 ntp
 ntpdate
 openssh-client
