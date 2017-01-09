@@ -245,6 +245,7 @@ passwd
 patch
 pavucontrol
 pciutils
+pdftk
 perl
 perl-base
 pidgin
@@ -252,6 +253,7 @@ pmount
 postgresql
 procmail
 procps
+pwgen
 python
 python-apt
 python-minimal
