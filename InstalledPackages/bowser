@@ -262,6 +262,7 @@ python-reportbug
 python-support
 python-virtualenv
 python2.7
+quicksynergy
 readline-common
 reportbug
 rox-filer
@@ -271,9 +272,11 @@ scrot
 sed
 sensible-utils
 software-properties-common
+ssh
 ssh-askpass-fullscreen
 startpar
 sudo
+synergy
 syslinux-utils
 system-config-kickstart
 systemd
