@@ -90,6 +90,7 @@ hostname
 httpie
 i3
 i3lock
+i7z
 iceweasel
 ifupdown
 info
@@ -241,6 +242,8 @@ ntp
 ntpdate
 openssh-client
 openvpn
+p7zip
+p7zip-full
 passwd
 patch
 pavucontrol
@@ -262,6 +265,8 @@ python-reportbug
 python-support
 python-virtualenv
 python2.7
+python3-pip
+python3-virtualenv
 quicksynergy
 readline-common
 reportbug
