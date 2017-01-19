@@ -244,6 +244,7 @@ openssh-client
 openvpn
 p7zip
 p7zip-full
+pandoc
 passwd
 patch
 pavucontrol
@@ -262,6 +263,7 @@ python-apt
 python-minimal
 python-pip
 python-reportbug
+python-sphinx
 python-support
 python-virtualenv
 python2.7
@@ -272,6 +274,7 @@ readline-common
 reportbug
 rox-filer
 rpcbind
+rst2pdf
 rsyslog
 scrot
 sed
@@ -297,6 +300,8 @@ tasksel-data
 teamviewer:i386
 telnet
 texinfo
+texlive
+texlive-binaries
 time
 traceroute
 tzdata
