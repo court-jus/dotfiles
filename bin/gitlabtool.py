@@ -31,7 +31,7 @@ if not TOKEN:
     print("No token found in %s" % (tokenfile, ))
     sys.exit(1)
 
-git = gitlab.GitLab('http://gitlab.clarisys.lan', token=TOKEN)
+git = gitlab.GitLab('http://gitlab.itrust.fr', token=TOKEN)
 mca = git.project(68)
 
 merges = dict([
@@ -62,7 +62,7 @@ for branch in mca.branches():
             u"""
 %s
 (%s - %s)
-http://gitlab.clarisys.lan/mca/mca/commits/%s
+http://gitlab.itrust.fr/mca/mca/commits/%s
 
 """ %
             (branch.name, commit['id'], commit['committed_date'],
@@ -79,7 +79,7 @@ branches :
 
 Faut-il supprimer cette branche ?
 
-http://gitlab.clarisys.lan/mca/mca/commits/%s""" %
+http://gitlab.itrust.fr/mca/mca/commits/%s""" %
             (branch.name, commit['id'], commit['committed_date'],
              u"\n".join(merged_in_another), branch.name, )
         )

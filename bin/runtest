@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run --name montest -it --rm -v /home/gl/src/ikare/:/builds ikare-api-test bash /builds/ikare-api/montest.sh

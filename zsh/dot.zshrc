@@ -50,7 +50,7 @@ alias bas="ssh bastion"
 #alias cd="pushd"
 
 function precmd {
-    if readlink -f .local/bin/activate | grep -q "^$HOME/"; then
+    if [ -f .local/bin/activate ] ; then
         source .local/bin/activate
     fi
 }
@@ -60,6 +60,8 @@ export GOROOT=/home/gl/src/go-dist
 export GOPATH=/home/gl/src/go
 export PATH=$PATH:/home/gl/node_modules/.bin/:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin:/home/gl/anaconda3/bin
 export PAGER="less -S"
+export DEBEMAIL="gleveque@itrust.fr"
+export DEBFULLNAME="Ghislain Lévêque"
 
 ###-begin-yo-completion-###
 _yo_completion () {

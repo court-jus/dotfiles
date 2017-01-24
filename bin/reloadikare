@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /home/gl/src/ikare/ikare-meta/docker/
-docker-compose exec gui make -C /home/devikare/ikare-gui soy dev
+docker-compose exec gui make -C /home/devikare/ikare-gui dist # dev
 docker-compose exec api supervisorctl restart all
 docker-compose exec gui supervisorctl restart all
 xdotool search --name "IKare by ITrust.*Firefox" key Ctrl+F5

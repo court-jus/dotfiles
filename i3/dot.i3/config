@@ -200,6 +200,8 @@ exec /usr/bin/xsetroot -solid "#002b36"
 exec /usr/bin/nm-applet
 exec /usr/bin/volumeicon
 exec /usr/bin/chromix-too-server
+exec /usr/bin/mediatomb -e wlp1s0 -d
+exec /usr/bin/Esetroot /home/gl/Images/lock.png
 
 workspace_layout stacking
 

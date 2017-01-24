@@ -67,3 +67,5 @@ alias gur='git fetch --all;git pull --rebase; git submodule sync ; git submodule
 alias gcheck='gdfc | grep -e "[^ ] $" -e "print" -e "console"'
 alias glgg='git log --stat @{upstream}..'
 alias gllg='git log --stat ..@{upstream}'
+alias gdgg='git diff @{upstream}..'
+alias gddg='git diff ..@{upstream}'
