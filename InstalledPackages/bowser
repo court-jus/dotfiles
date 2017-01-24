@@ -219,6 +219,7 @@ mediatomb
 meld
 mime-support
 mlocate
+moreutils
 mount
 mtr
 multiarch-support
@@ -287,6 +288,7 @@ sudo
 synergy
 syslinux-utils
 system-config-kickstart
+system-config-printer
 systemd
 systemd-sysv
 sysv-rc
