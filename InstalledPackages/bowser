@@ -3,6 +3,9 @@ acpi
 acpi-support-base
 acpid
 adduser
+alsa-base
+alsa-tools
+alsa-tools-gui
 alsamixergui
 apt
 apt-file
@@ -55,10 +58,6 @@ e2fslibs
 e2fsprogs
 eog
 evince
-exim4
-exim4-base
-exim4-config
-exim4-daemon-light
 file
 findutils
 ftp
@@ -255,6 +254,7 @@ perl
 perl-base
 pidgin
 pmount
+postfix
 postgresql
 procmail
 procps
@@ -263,6 +263,7 @@ python
 python-apt
 python-minimal
 python-pip
+python-psycopg2
 python-reportbug
 python-sphinx
 python-support
@@ -323,6 +324,7 @@ wget
 whiptail
 whois
 xautolock
+xbacklight
 xdotool
 xorriso
 xz-utils
