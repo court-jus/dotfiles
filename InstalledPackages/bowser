@@ -204,6 +204,7 @@ libvirt0
 libxtables10
 lightdm
 linux-image-amd64
+livestreamer
 locales
 login
 logrotate
@@ -262,6 +263,7 @@ procps
 pwgen
 python
 python-apt
+python-librtmp
 python-minimal
 python-pip
 python-psycopg2
@@ -318,6 +320,7 @@ vim-common
 vim-tiny
 virt-manager
 virtualbox-5.1
+vlc
 volumeicon-alsa
 w3m
 wamerican
