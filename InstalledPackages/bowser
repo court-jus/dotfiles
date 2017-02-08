@@ -242,6 +242,7 @@ nodejs-legacy
 npm
 ntp
 ntpdate
+openarena
 openssh-client
 openvpn
 p7zip
