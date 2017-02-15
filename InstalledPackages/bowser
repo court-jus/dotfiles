@@ -24,6 +24,7 @@ bash-completion
 bc
 bind9-host
 binutils-multiarch
+bookletimposer
 bsd-mailx
 bsdmainutils
 bsdutils
@@ -106,6 +107,7 @@ installation-report
 iotop
 iproute2
 iptables
+iptables-persistent
 iputils-ping
 ipython
 isc-dhcp-client
