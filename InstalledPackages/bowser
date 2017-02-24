@@ -231,6 +231,7 @@ mtr
 multiarch-support
 mutt
 nano
+nbtscan
 ncdu
 ncurses-base
 ncurses-bin
@@ -242,6 +243,7 @@ netpbm
 network-manager-gnome
 nfacct
 nfs-common
+nmap
 nodejs
 nodejs-legacy
 npm
