@@ -62,6 +62,7 @@ evince
 figlet
 file
 findutils
+flake8
 ftp
 gcc-4.8-base
 gcc-4.9-base
@@ -260,6 +261,7 @@ patch
 pavucontrol
 pciutils
 pdftk
+pep8
 perl
 perl-base
 pidgin
@@ -269,6 +271,8 @@ postgresql
 procmail
 procps
 pwgen
+pyflakes
+pylint
 python
 python-apt
 python-librtmp
