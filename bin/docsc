@@ -1,6 +1,13 @@
 #!/bin/bash
 
-service=$1
-shift
 cd /home/gl/src/ikare/ikare-meta/docker/
-docker-compose exec $service supervisorctl $@
+if [ $# -lt 1 ]; then
+    for service in api gui engines
+    do
+        docker-compose exec $service supervisorctl status
+    done
+else
+    service=$1
+    shift
+    docker-compose exec $service supervisorctl $@
+fi

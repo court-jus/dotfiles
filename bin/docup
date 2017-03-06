@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cd /home/gl/src/ikare/ikare-meta/docker/
-docker-compose up -d --build --force-recreate
+docker-compose up -d --build --force-recreate $@
 docker_hosts | sudo /usr/bin/tee /etc/hosts
-sleep 5
-psql -h docker_bdd_1 -U ikareapi -d ikareapi -f /home/gl/src/ikare/ikare-api/install/schema.sql
+#sleep 5
+#psql -h docker_bdd_1 -U ikareapi -d ikareapi -f /home/gl/src/ikare/ikare-api/install/schema.sql
 

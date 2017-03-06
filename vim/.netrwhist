@@ -1,6 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/gl/dotfiles/vim'
-let g:netrw_dirhist_2='/home/gl/src/ikare/ikare-meta/docker/ikare-dashboards'
-let g:netrw_dirhist_3='/home/gl/src/ikare/ikare-meta/docker/ikare-gui'
-let g:netrw_dirhist_4='/home/gl/src/dashboards/views'
+let g:netrw_dirhist_cnt =0
