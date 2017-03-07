@@ -37,6 +37,7 @@ coreutils
 cpio
 cron
 cryptsetup
+curl
 dash
 dbus
 dc
@@ -71,6 +72,7 @@ genisoimage
 gettext-base
 gimp
 gitk
+gitlab-ci-multi-runner
 gmpc
 gnome-control-center
 gnome-terminal
@@ -119,6 +121,7 @@ keepass2
 key-mon
 keyboard-configuration
 kmod
+kodi
 kpcli
 krb5-locales
 laptop-detect
