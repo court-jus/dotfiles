@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for h in $@; do
+    git branch -va --contains $h 2>&1 | grep "^*"
+    git log -i --grep $h | grep $h
+done
