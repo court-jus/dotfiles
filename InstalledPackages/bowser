@@ -100,12 +100,14 @@ i3lock
 i7z
 iceweasel
 ifupdown
+incron
 info
 init
 init-system-helpers
 initramfs-tools
 initscripts
 inkscape
+inotify-tools
 insserv
 install-info
 installation-report
@@ -330,6 +332,8 @@ trickle
 tzdata
 ucf
 udev
+unison
+unison-gtk
 usbutils
 util-linux
 vim
