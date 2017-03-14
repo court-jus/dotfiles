@@ -298,6 +298,7 @@ rox-filer
 rpcbind
 rst2pdf
 rsyslog
+screen
 scrot
 sed
 sensible-utils
@@ -354,6 +355,7 @@ xautolock
 xbacklight
 xdotool
 xorriso
+xournal
 xz-utils
 youtube-dl
 zenity
