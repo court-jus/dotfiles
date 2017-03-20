@@ -119,6 +119,7 @@ iputils-ping
 ipython
 isc-dhcp-client
 isc-dhcp-common
+jsbeautifier
 keepass2
 key-mon
 keyboard-configuration
@@ -154,6 +155,7 @@ libffi6
 libgcc1
 libgcrypt20
 libgdbm3
+libgl1-mesa-glx
 libgmp10
 libgnutls-deb0-28
 libgnutls-openssl27
@@ -245,6 +247,7 @@ ncurses-term
 net-tools
 netbase
 netcat-traditional
+nethogs
 netpbm
 network-manager-gnome
 nfacct
