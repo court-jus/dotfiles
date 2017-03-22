@@ -283,6 +283,7 @@ pyflakes
 pylint
 python
 python-apt
+python-autopep8
 python-librtmp
 python-minimal
 python-pip
