@@ -1,3 +1,4 @@
+acct
 acl
 acpi
 acpi-support-base
@@ -7,6 +8,7 @@ alsa-base
 alsa-tools
 alsa-tools-gui
 alsamixergui
+apache2
 apt
 apt-file
 apt-listchanges
@@ -16,6 +18,7 @@ aptitude-common
 arandr
 at
 atom
+atop
 audacity
 base-files
 base-passwd
@@ -237,6 +240,9 @@ moreutils
 mount
 mtr
 multiarch-support
+munin
+munin-node
+munin-plugins-extra
 mutt
 nano
 nbtscan
@@ -253,6 +259,7 @@ network-manager-gnome
 nfacct
 nfs-common
 nmap
+nmon
 nodejs
 nodejs-legacy
 npm
