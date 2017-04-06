@@ -317,6 +317,7 @@ python-gtk2-dev
 python-librtmp
 python-minimal
 python-pip
+python-prctl
 python-psycopg2
 python-reportbug
 python-sphinx
