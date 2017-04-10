@@ -127,6 +127,7 @@ isc-dhcp-common
 jsbeautifier
 keepass2
 key-mon
+keybase
 keyboard-configuration
 kmod
 kodi
@@ -190,6 +191,7 @@ liblockfile-bin
 liblogging-stdlog0
 liblognorm1
 liblzma5
+libmcrypt-dev
 libmnl0
 libmount1
 libncurses5
@@ -208,6 +210,7 @@ libpipeline1
 libpopt0
 libprocps3
 libpsl0
+libreadline-dev
 libreadline6
 libreoffice
 libreoffice-calc
@@ -251,9 +254,11 @@ m4
 man-db
 manpages
 mawk
+mcrypt
 md5deep
 mediatomb
 meld
+mercurial
 mime-support
 mlocate
 moreutils
@@ -292,6 +297,7 @@ p7zip
 p7zip-full
 pandoc
 passwd
+passwordsafe
 patch
 pavucontrol
 pciutils
