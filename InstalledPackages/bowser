@@ -61,6 +61,7 @@ dpkg
 dropbox
 e2fslibs
 e2fsprogs
+empire
 eog
 evince
 figlet
@@ -195,6 +196,7 @@ libmcrypt-dev
 libmnl0
 libmount1
 libncurses5
+libncurses5-dev
 libncursesw5
 libnetfilter-acct1
 libnettle4
@@ -278,6 +280,7 @@ ncurses-term
 net-tools
 netbase
 netcat-traditional
+nethack-console
 nethogs
 netpbm
 network-manager-gnome
