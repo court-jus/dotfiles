@@ -219,6 +219,9 @@ libreoffice-calc
 libreoffice-l10n-fr
 libreoffice-pdfimport
 librsvg2-dev
+libsdl-mixer1.2
+libsdl1.2debian
+libsdl2-mixer-2.0-0
 libselinux1
 libsemanage-common
 libsemanage1
@@ -263,6 +266,7 @@ meld
 mercurial
 mime-support
 mlocate
+mongodb-clients
 moreutils
 mount
 mtr
