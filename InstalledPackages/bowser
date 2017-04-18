@@ -321,6 +321,7 @@ procps
 pwgen
 pyflakes
 pylint
+pylint3
 python
 python-apt
 python-autopep8
