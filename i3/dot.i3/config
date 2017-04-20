@@ -192,7 +192,6 @@ exec /usr/bin/xautolock -locker /usr/bin/i3lock -i /home/gl/Images/lock.png
 exec /home/gl/.screenlayout/ondock.sh
 # exec /usr/bin/google-musicmanager
 # exec /usr/bin/megasync
-# exec /usr/bin/pidgin
 # exec /usr/bin/icedove
 exec /usr/bin/xset m 4/1
 exec /usr/bin/xsetroot -solid "#002b36"

@@ -63,4 +63,4 @@ msgwait 15
 setenv DISPLAY ':0'
 logfile /home/gl/logs/screen_%Y-%m-%d_%0c
 
-zombie az
+# zombie az
