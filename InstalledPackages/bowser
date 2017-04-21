@@ -253,6 +253,8 @@ locales
 login
 logrotate
 lsb-base
+lshw
+lshw-gtk
 lsof
 lvm2
 m4
