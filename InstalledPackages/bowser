@@ -328,13 +328,17 @@ python
 python-apt
 python-autopep8
 python-cairo-dev
+python-docutils
 python-flake8
 python-gtk2-dev
+python-jinja2
 python-librtmp
 python-minimal
 python-pip
 python-prctl
 python-psycopg2
+python-pygments
+python-qt4
 python-reportbug
 python-sphinx
 python-support
