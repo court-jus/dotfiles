@@ -321,6 +321,7 @@ postgresql
 procmail
 procps
 pwgen
+pybik
 pyflakes
 pylint
 pylint3
