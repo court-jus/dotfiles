@@ -83,6 +83,7 @@ gnome-terminal
 gnupg
 gnupg2
 goaccess
+golang
 google-chrome-stable
 google-talkplugin
 gparted
@@ -320,6 +321,7 @@ postfix
 postgresql
 procmail
 procps
+proxychains
 pwgen
 pybik
 pyflakes
@@ -364,6 +366,7 @@ software-properties-common
 spotify-client
 ssh
 ssh-askpass-fullscreen
+sslscan
 startpar
 sudo
 synergy
