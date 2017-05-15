@@ -61,6 +61,7 @@ dpkg
 dropbox
 e2fslibs
 e2fsprogs
+elasticsearch
 empire
 eog
 evince
@@ -88,6 +89,8 @@ google-chrome-stable
 google-talkplugin
 gparted
 gpgv
+graylog-2.2-repository
+graylog-server
 greenbone-security-assistant
 grep
 groff-base
@@ -250,6 +253,7 @@ libxtables10
 lightdm
 linux-image-amd64
 livestreamer
+lnav
 locales
 login
 logrotate
@@ -270,6 +274,7 @@ mercurial
 mime-support
 mlocate
 mongodb-clients
+mongodb-server
 moreutils
 mount
 mtr
