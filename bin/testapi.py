@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import pdb  # noqa
 import ssl
@@ -23,5 +24,5 @@ p = xmlrpclib.ServerProxy(
 )
 
 print(p.user.me())
-print(p.host.find("in_group(16) and updated_at > '20161225'"))
-print(xmlrpclib.dumps(("in_group(16) and updated_at > '20161225'",),"host.find"))
+# print(p.host.find("in_group(16) and updated_at > '20161225'"))
+# print(xmlrpclib.dumps(("in_group(16) and updated_at > '20161225'",),"host.find"))

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ~/tools/Leo-4.8-final/
+cd ~/tools/leo-editor/
 python launchLeo.py
