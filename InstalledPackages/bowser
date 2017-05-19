@@ -307,6 +307,7 @@ npm
 ntp
 ntpdate
 openarena
+openjfx
 openssh-client
 openvpn
 p7zip
@@ -402,6 +403,7 @@ ucf
 udev
 unison
 unison-gtk
+unrar
 usbutils
 util-linux
 vim
