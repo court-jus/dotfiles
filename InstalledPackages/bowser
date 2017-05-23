@@ -73,6 +73,7 @@ ftp
 gcc-4.8-base
 gcc-4.9-base
 gcc-5
+gcolor2
 gegl
 genisoimage
 gettext-base
