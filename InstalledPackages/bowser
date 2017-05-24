@@ -374,6 +374,7 @@ software-properties-common
 spotify-client
 ssh
 ssh-askpass-fullscreen
+sshfs
 sslscan
 startpar
 sudo
