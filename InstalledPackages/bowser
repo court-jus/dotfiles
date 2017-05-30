@@ -85,6 +85,7 @@ gnome-control-center
 gnome-terminal
 gnupg
 gnupg2
+gnutls-bin
 goaccess
 golang
 google-chrome-stable
@@ -179,6 +180,7 @@ libglib2.0-dev
 libgmp10
 libgnutls-deb0-28
 libgnutls-openssl27
+libgnutls28-dev
 libgpg-error0
 libgtk2.0-dev
 libhogweed2
@@ -213,6 +215,8 @@ libpam-modules
 libpam-modules-bin
 libpam-runtime
 libpam0g
+libpcre2-8-0
+libpcre2-dev
 libpcre3
 libpipeline1
 libpopt0
@@ -314,6 +318,7 @@ openvpn
 p7zip
 p7zip-full
 pandoc
+parcellite
 passwd
 passwordsafe
 patch
