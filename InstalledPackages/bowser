@@ -132,6 +132,7 @@ iputils-ping
 ipython
 isc-dhcp-client
 isc-dhcp-common
+jq
 jsbeautifier
 keepass2
 key-mon
