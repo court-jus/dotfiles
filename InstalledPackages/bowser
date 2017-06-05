@@ -41,6 +41,8 @@ cpio
 cron
 cryptsetup
 curl
+cython
+cython3
 dash
 dbus
 dc
@@ -80,6 +82,7 @@ gettext-base
 gimp
 gitk
 gitlab-ci-multi-runner
+glade
 gmpc
 gnome-control-center
 gnome-terminal
@@ -183,6 +186,7 @@ libgnutls-deb0-28
 libgnutls-openssl27
 libgnutls28-dev
 libgpg-error0
+libgtk-3-dev
 libgtk2.0-dev
 libhogweed2
 libicu52
@@ -278,6 +282,7 @@ md5deep
 mediatomb
 meld
 mercurial
+mesa-common-dev
 mime-support
 mlocate
 mongodb-clients
@@ -347,6 +352,9 @@ python-autopep8
 python-cairo-dev
 python-docutils
 python-flake8
+python-gi
+python-glade2
+python-gtk2
 python-gtk2-dev
 python-jinja2
 python-librtmp
