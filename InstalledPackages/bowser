@@ -132,7 +132,6 @@ iproute2
 iptables
 iptables-persistent
 iputils-ping
-ipython
 isc-dhcp-client
 isc-dhcp-common
 jq
