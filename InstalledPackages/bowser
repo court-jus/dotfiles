@@ -255,6 +255,12 @@ libtext-iconv-perl
 libtext-wrapi18n-perl
 libtiff5-dev
 libtinfo5
+libtoxav-toktok
+libtoxav0
+libtoxcore-dev
+libtoxcore0
+libtoxencryptsave-toktok
+libtoxencryptsave0
 libudev1
 libusb-0.1-4
 libustr-1.0-1
@@ -270,6 +276,7 @@ locales
 login
 logrotate
 lsb-base
+lsb-release
 lshw
 lshw-gtk
 lsof
@@ -337,6 +344,7 @@ perl
 perl-base
 pidgin
 pmount
+portaudio19-dev
 postfix
 postgresql
 procmail
@@ -371,10 +379,12 @@ python-support
 python-virtualenv
 python2.7
 python3-pip
+python3-pyside
 python3-virtualenv
 quicksynergy
 readline-common
 reportbug
+ring
 rox-filer
 rpcbind
 rst2pdf
@@ -425,6 +435,7 @@ unison-gtk
 unrar
 usbutils
 util-linux
+utox
 vim
 vim-common
 vim-tiny
