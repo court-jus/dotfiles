@@ -45,6 +45,7 @@ curl
 cython
 cython3
 dash
+davfs2
 dbus
 dc
 debconf
@@ -54,6 +55,7 @@ debian-faq
 debianutils
 devscripts
 diffutils
+discord
 discover
 dmidecode
 dmsetup
@@ -139,6 +141,7 @@ isc-dhcp-common
 jq
 jsbeautifier
 keepass2
+keeweb-desktop
 key-mon
 keybase
 keyboard-configuration
