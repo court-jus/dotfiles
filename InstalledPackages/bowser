@@ -75,6 +75,7 @@ extlinux
 figlet
 file
 findutils
+fping
 ftp
 gcc-4.8-base
 gcc-4.9-base
