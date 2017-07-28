@@ -34,6 +34,7 @@ bsdmainutils
 bsdutils
 busybox
 bzip2
+bzr
 ca-certificates
 compton
 console-setup
@@ -77,6 +78,7 @@ file
 findutils
 fping
 ftp
+g++
 gcc-4.8-base
 gcc-4.9-base
 gcc-5
@@ -152,6 +154,8 @@ kpcli
 krb5-locales
 laptop-detect
 less
+lib32ncurses5
+lib32z1
 libacl1
 libapt-inst1.5
 libapt-pkg4.12
@@ -163,6 +167,7 @@ libbabl-dev
 libblkid1
 libboost-iostreams1.55.0
 libbz2-1.0
+libbz2-1.0:i386
 libbz2-dev
 libc-bin
 libc6
@@ -251,6 +256,7 @@ libsmartcols1
 libss2
 libssl1.0.0
 libstdc++6
+libstdc++6:i386
 libswitch-perl
 libsystemd0
 libtasn1-6
@@ -326,8 +332,6 @@ nfs-common
 nmap
 nmon
 nodejs
-nodejs-legacy
-npm
 ntp
 ntpdate
 openarena
