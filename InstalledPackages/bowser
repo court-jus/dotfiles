@@ -60,6 +60,7 @@ discord
 discover
 dmidecode
 dmsetup
+dnsmasq
 dnsutils
 doc-debian
 docker-engine
@@ -114,6 +115,7 @@ gsetroot
 gthumb
 gtk-doc-tools
 gzip
+hexchat
 host
 hostname
 httpie
