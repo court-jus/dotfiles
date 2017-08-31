@@ -28,6 +28,7 @@ bash-completion
 bc
 bind9-host
 binutils-multiarch
+blender
 bookletimposer
 bsd-mailx
 bsdmainutils
@@ -240,6 +241,7 @@ libprocps3
 libpsl0
 libreadline-dev
 libreadline6
+librecad
 libreoffice
 libreoffice-calc
 libreoffice-l10n-fr
@@ -406,6 +408,7 @@ screen
 scrot
 sed
 sensible-utils
+sgt-puzzles
 skypeforlinux
 software-properties-common
 spotify-client
@@ -461,6 +464,7 @@ wget
 whiptail
 whois
 wine
+wings3d
 wireshark
 wmctrl
 wondershaper
