@@ -341,6 +341,7 @@ nmon
 nodejs
 ntp
 ntpdate
+onesixtyone
 openarena
 openjfx
 openssh-client
@@ -390,6 +391,8 @@ python-pip
 python-prctl
 python-psycopg2
 python-pygments
+python-pyqt5
+python-pyqt5.qtwebkit
 python-qt4
 python-reportbug
 python-sphinx
@@ -414,6 +417,8 @@ sed
 sensible-utils
 sgt-puzzles
 skypeforlinux
+snimpy
+snmp-mibs-downloader
 software-properties-common
 spotify-client
 ssh
@@ -444,6 +449,7 @@ texinfo
 texlive-binaries
 thunderbird
 time
+tkmib
 traceroute
 trickle
 tzdata
