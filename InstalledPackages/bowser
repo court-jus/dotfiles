@@ -117,6 +117,7 @@ grun
 gsetroot
 gthumb
 gtk-doc-tools
+gvncviewer
 gzip
 hexchat
 host
@@ -491,6 +492,7 @@ xbacklight
 xdotool
 xorriso
 xournal
+xtightvncviewer
 xz-utils
 youtube-dl
 zenity
