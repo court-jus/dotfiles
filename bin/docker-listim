@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+wget -o /dev/null -O - --no-check-certificate https://nas.itrust.fr:5050/v2/_catalog

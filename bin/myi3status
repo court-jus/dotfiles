@@ -3,6 +3,6 @@
 i3status | while :
 do
     read line
-    echo "$line | $(/home/gl/bin/kbleds)"
+    echo "$(/home/gl/bin/curtrack) | $line | $(/home/gl/bin/kbleds)"
 done
 

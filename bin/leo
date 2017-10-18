@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd ~/tools/leo-editor/
-python launchLeo.py
+python launchLeo.py /home/gl/tools/leo-editor/suivi.leo
