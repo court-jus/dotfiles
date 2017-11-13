@@ -15,7 +15,7 @@ DMENU = shutil.which('dmenu')
 PASS = shutil.which('pass')
 STORE = os.getenv('PASSWORD_STORE_DIR',
                   path.normpath(path.expanduser('~/.password-store')))
-XSEL_PRIMARY = "primary"
+XSEL_PRIMARY = "p,s,c"
 
 
 def get_xselection(selection):
