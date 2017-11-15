@@ -64,20 +64,53 @@ class Spotimy(object):
 
     def get_playlist_by_name(self, plist_name):
         for plist in self.sp.current_user_playlists()["items"]:
-            if plist["name"] == plist_name:
+            if unicode(plist["name"]) == unicode(plist_name):
                 return plist
 
-    def get_playlist_tracks(self, playlist):
+    def get_playlist_tracks(self, playlist, titles=False):
         if not playlist:
             return []
         tracks = self.sp.user_playlist(
             self.username, playlist["id"], fields="tracks,id")
-        return map(lambda t: t["track"]["id"], tracks["tracks"]["items"])
+
+        field = "name" if titles else "id"
+        return map(lambda t: t["track"][field], tracks["tracks"]["items"])
+
+    def get_album_tracks(self, album, titles=False):
+        if not album:
+            return []
+        result = []
+        limit = 50
+        biglimit = 1000
+        offset = 0
+        total = None
+        album_id = album["album"]["id"]
+        while (len(result) < biglimit and (total is None or len(result) < total)):
+            sub= self.sp.album_tracks(album_id, limit=limit, offset=offset)
+            result.extend(sub["items"])
+            total = sub["total"]
+            offset += limit
+        field = "name" if titles else "id"
+        return map(lambda t: t[field], result)
+
+    def get_user_albums(self):
+        print "Loading user albums"
+        albums = []
+        limit = 50
+        biglimit = 1000
+        offset = 0
+        total = None
+        while (len(albums) < biglimit and (total is None or len(albums) < total)):
+            subalbums = self.sp.current_user_saved_albums(limit=limit, offset=offset)
+            albums.extend(subalbums["items"])
+            total = subalbums["total"]
+            offset += limit
+        return albums
 
     def add_library_to_sorting_plist(self, needs_sorting_playlist, sort_playlists):
         offset = 0
-        limit = 50
-        biglimit = 100
+        limit = 100
+        biglimit = 10000
         my_library = []
         total = None
         already_sorted = []
@@ -85,7 +118,10 @@ class Spotimy(object):
         needs_sorting = self.get_playlist_tracks(needs_sorting_playlist)
         for plname in sort_playlists:
             already_sorted.extend(self.get_playlist_tracks(self.get_playlist_by_name(plname)))
-        import pdb; pdb.set_trace()
+        for album in self.get_user_albums():
+            already_sorted.extend(self.get_album_tracks(album))
+        print len(already_sorted), "tracks already sorted"
+        print len(needs_sorting), "tracks already in need to be sorted"
         while len(my_library) < biglimit and (total is None or len(my_library) < total):
             print offset
             saved_tracks = self.sp.current_user_saved_tracks(limit=limit, offset=offset)
@@ -94,12 +130,10 @@ class Spotimy(object):
             total = saved_tracks["total"]
             offset += limit
         for track in my_library:
-            print track["track"]["name"]
-            if track["track"]["id"] not in needs_sorting:
-                if track["track"]["id"] in sort_playlists:
-                    print "already sorted"
-                else:
-                    print "add to needs_sorting"
+            if (
+                track["track"]["id"] not in needs_sorting and
+                track["track"]["id"] not in already_sorted
+            ):
                     self.sp.user_playlist_add_tracks(
                         self.username, needs_sorting_playlist["id"],
                         [track["track"]["id"], ],
@@ -113,15 +147,15 @@ def main():
         "Baume au coeur", "piano", "Douceur, detente",
         "Morning boost up", "Forget everything and get into a blind trance",
         "Steampunk and strange stuff", "Nostalgie", "Pump It up !!",
-        "share it maybe", "Frissons à l'unisson", "Ondulations",
+        "share it maybe", u"Frissons à l'unisson", "Ondulations",
         "Route 66 and other highways", "Will you dance with me ?",
         "Know me through music I love...", "Interesting covers", "MedFan", "Blues junkie",
         "Jazzy or not", "Cosy Road Trip", "Mes titres Shazam", "Rock Box",
-        "À tester, découvrir", "Épique",
+        u"À tester, découvrir", u"Épique",
         "Viens danser tout contre moi", "Endless Trip on a Steel Dragonfly", "Cosy",
-        "Enfants", "Sélection", "Favoris des radios", needs_sorting_playlist,
+        "Enfants", u"Sélection", "Favoris des radios", needs_sorting_playlist,
     ]
-    # sp.add_my_plist_tracks_to_library(save_playlists)
+    sp.add_my_plist_tracks_to_library(save_playlists)
     sp.add_library_to_sorting_plist(needs_sorting_playlist, save_playlists)
 
 
