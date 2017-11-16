@@ -144,7 +144,7 @@ def main():
     sp = Spotimy()
     needs_sorting_playlist = "needs sorting"
     save_playlists = [
-        "Baume au coeur", "piano", "Douceur, detente",
+        "Baume au coeur", "piano", "Douceur, detente", "Swing", "OMNI",
         "Morning boost up", "Forget everything and get into a blind trance",
         "Steampunk and strange stuff", "Nostalgie", "Pump It up !!",
         "share it maybe", u"Frissons à l'unisson", "Ondulations",
