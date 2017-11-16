@@ -49,6 +49,7 @@ class Spotimy(object):
             sys.exit()
 
     def add_my_plist_tracks_to_library(self, save_playlists):
+        print "Adding all tracks in playlists to user's library."
         for plist in self.sp.current_user_playlists()["items"]:
             if plist["name"] in save_playlists:
                 print plist["name"]
@@ -108,6 +109,9 @@ class Spotimy(object):
         return albums
 
     def add_library_to_sorting_plist(self, needs_sorting_playlist, sort_playlists):
+        print "Search library and add un-playlisted tracks to playlist [{}]".format(
+            needs_sorting_playlist,
+        )
         offset = 0
         limit = 100
         biglimit = 10000
@@ -129,15 +133,19 @@ class Spotimy(object):
             my_library.extend(saved_tracks["items"])
             total = saved_tracks["total"]
             offset += limit
+        print len(my_library), "total tracks"
+        to_sort = []
         for track in my_library:
             if (
                 track["track"]["id"] not in needs_sorting and
                 track["track"]["id"] not in already_sorted
             ):
-                    self.sp.user_playlist_add_tracks(
-                        self.username, needs_sorting_playlist["id"],
-                        [track["track"]["id"], ],
-                    )
+                to_sort.append(track["track"]["id"])
+        print len(to_sort), "tracks to sort"
+        self.sp.user_playlist_add_tracks(
+            self.username, needs_sorting_playlist["id"],
+            [track["track"]["id"], ],
+        )
 
 
 def main():
@@ -155,9 +163,14 @@ def main():
         "Viens danser tout contre moi", "Endless Trip on a Steel Dragonfly", "Cosy",
         "Enfants", u"Sélection", "Favoris des radios", needs_sorting_playlist,
     ]
-    sp.add_my_plist_tracks_to_library(save_playlists)
+    # sp.add_my_plist_tracks_to_library(save_playlists)
     sp.add_library_to_sorting_plist(needs_sorting_playlist, save_playlists)
 
 
 if __name__ == "__main__":
+    # Uncomment this after changing YOUR_CLIENT_* to
+    # create the token file ~/.spotifytoken
+    #
+    # create_token_file()
+    #
     main()

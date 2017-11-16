@@ -3,18 +3,20 @@
 activew=$(xdotool getactivewindow)
 actived=$(xdotool get_desktop)
 
-if mpc | grep "^\[playing\]" ; then
-    app="mpd"
-elif mpc | grep "^\[paused\]" ; then
-    app="mpd"
-elif pacmd list-sink-inputs | head -1 | grep "^0"; then
-    # on est en pause
-    app=$(cat $HOME/.musicapp)
-elif pacmd list-sink-inputs | grep -i "^\s*application.name.*Chrome"; then
-    app="Chrome"
-else
-    app="spotify"
-fi
+app="spotify"
+
+#if mpc | grep "^\[playing\]" ; then
+#    app="mpd"
+#elif mpc | grep "^\[paused\]" ; then
+#    app="mpd"
+#elif pacmd list-sink-inputs | head -1 | grep "^0"; then
+#    # on est en pause
+#    app=$(cat $HOME/.musicapp)
+#elif pacmd list-sink-inputs | grep -i "^\s*application.name.*Chrome"; then
+#    app="Chrome"
+#else
+#    app="spotify"
+#fi
 
 echo -n ${app} > $HOME/.musicapp
 
