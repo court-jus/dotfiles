@@ -199,6 +199,7 @@ libgl1-mesa-glx
 libglib2.0-dev
 libglib3.0-cil-dev
 libgmp10
+libgnomeui-0
 libgnutls-deb0-28
 libgnutls-openssl27
 libgnutls28-dev
