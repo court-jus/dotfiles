@@ -1,0 +1,3 @@
+[submodule "bin/spotimy"]
+	path = bin/spotimy
+	url = git@github.com:court-jus/spotimy.git
