@@ -79,6 +79,7 @@ extlinux
 figlet
 file
 findutils
+flake8
 fping
 ftp
 g++
