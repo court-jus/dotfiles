@@ -53,6 +53,7 @@ dbus
 dc
 debconf
 debconf-i18n
+debconf-utils
 debian-archive-keyring
 debian-faq
 debianutils
@@ -452,7 +453,7 @@ task-print-server
 tasksel
 tasksel-data
 tcpdump
-teamviewer:i386
+teamviewer
 telnet
 texinfo
 texlive-binaries
