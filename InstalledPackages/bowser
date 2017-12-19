@@ -264,6 +264,7 @@ libsemanage1
 libsepol1
 libslang2
 libsmartcols1
+libsmbclient
 libss2
 libssl1.0.0
 libstdc++6
