@@ -335,6 +335,7 @@ ncdu
 ncurses-base
 ncurses-bin
 ncurses-term
+nessus
 net-tools
 netbase
 netcat-traditional
@@ -351,7 +352,6 @@ nodejs
 ntp
 ntpdate
 onesixtyone
-openarena
 openjfx
 openssh-client
 openvpn
