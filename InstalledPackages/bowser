@@ -29,10 +29,16 @@ bc
 bind9-host
 binutils-multiarch
 blender
+blueman
+bluetooth
+bluez
+bluez-firmware
+bluez-tools
 bookletimposer
 bsd-mailx
 bsdmainutils
 bsdutils
+btscanner
 build-essential
 busybox
 bzip2
@@ -80,6 +86,7 @@ extlinux
 figlet
 file
 findutils
+firmware-iwlwifi
 flake8
 fping
 ftp
@@ -96,6 +103,7 @@ gitk
 gitlab-ci-multi-runner
 glade
 gmpc
+gnome-bluetooth
 gnome-control-center
 gnome-terminal
 gnupg
@@ -380,6 +388,8 @@ postgresql
 procmail
 procps
 proxychains
+pulseaudio
+pulseaudio-module-bluetooth
 pwgen
 pybik
 pyflakes
@@ -416,6 +426,7 @@ python3-virtualenv
 quicksynergy
 readline-common
 reportbug
+rfkill
 ring
 rox-filer
 rpcbind
