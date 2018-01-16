@@ -60,7 +60,7 @@ function precmd {
 export GOROOT=/home/gl/src/go-dist
 export GOPATH=/home/gl/src/go
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$PYENV_ROOT/bin:$PATH:/home/gl/Documents/Clients/bin/:/home/gl/node_modules/.bin/:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin:/home/gl/anaconda2/bin
+export PATH=$PYENV_ROOT/bin:$PATH:/home/gl/Documents/clients/bin/:/home/gl/node_modules/.bin/:/home/gl/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$GOROOT/bin:$GOPATH/bin:/home/gl/anaconda2/bin
 export PAGER="less -S"
 export DEBEMAIL="gleveque@itrust.fr"
 export DEBFULLNAME="Ghislain Lévêque"
