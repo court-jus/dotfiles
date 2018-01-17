@@ -471,6 +471,10 @@ teamviewer
 telnet
 texinfo
 texlive-binaries
+texlive-extra-utils
+texlive-latex-extra
+texlive-latex-recommended
+texlive-music
 thunderbird
 time
 tkmib
