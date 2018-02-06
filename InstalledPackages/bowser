@@ -304,7 +304,6 @@ linux-headers-amd64
 linux-image-4.12.0-2-amd64
 linux-image-4.12.0-2-amd64-dbg
 linux-image-amd64
-livestreamer
 lnav
 locales
 login
@@ -451,6 +450,7 @@ sshfs
 sslscan
 startpar
 stellarium
+streamlink
 subversion
 sudo
 synergy
