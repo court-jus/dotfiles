@@ -75,9 +75,6 @@ doc-debian
 docker-engine
 dpkg
 dropbox
-dssi-example-plugins
-dssi-host-jack
-dssi-utils
 e2fslibs
 e2fsprogs
 elasticsearch
@@ -101,7 +98,6 @@ gcolor2
 gegl
 genisoimage
 gettext-base
-ghostess
 gimp
 gitk
 gitlab-ci-multi-runner
@@ -473,6 +469,7 @@ tasksel-data
 tcpdump
 teamviewer
 telnet
+terminatorx
 texinfo
 texlive-binaries
 texlive-extra-utils
@@ -519,11 +516,10 @@ xdotool
 xmlindent
 xorriso
 xournal
-xsynth-dssi
 xtightvncviewer
 xz-utils
+yoshimi
 youtube-dl
 zenity
 zlib1g
 zsh
-zyne
