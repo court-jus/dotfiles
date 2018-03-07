@@ -44,6 +44,7 @@ busybox
 bzip2
 bzr
 ca-certificates
+ccd2iso
 compton
 console-setup
 coreutils
@@ -424,6 +425,7 @@ python3-pip
 python3-virtualenv
 quicksynergy
 readline-common
+remmina
 reportbug
 rfkill
 ring
