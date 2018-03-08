@@ -64,5 +64,6 @@ export PATH=$PYENV_ROOT/bin:$PATH:/home/gl/Documents/clients/bin/:/home/gl/node_
 export PAGER="less -S"
 export DEBEMAIL="gleveque@itrust.fr"
 export DEBFULLNAME="Ghislain Lévêque"
+export PASSWORD_STORE_CLIP_TIME=300
 
 bindkey '^R' history-incremental-pattern-search-backward
