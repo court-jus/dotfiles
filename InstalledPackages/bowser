@@ -9,6 +9,7 @@ alsa-base
 alsa-tools
 alsa-tools-gui
 alsamixergui
+anydesk
 apache2
 apt
 apt-file
