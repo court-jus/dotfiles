@@ -338,6 +338,7 @@ munin
 munin-node
 munin-plugins-extra
 mutt
+mysql-client
 nano
 nbtscan
 ncdu
@@ -495,6 +496,7 @@ uptimed
 usbutils
 util-linux
 utox
+vagrant
 valac
 vim
 vim-common
