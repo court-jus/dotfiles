@@ -46,6 +46,7 @@ bzip2
 bzr
 ca-certificates
 ccd2iso
+clearlooks-phenix-theme
 compton
 console-setup
 coreutils
@@ -55,6 +56,7 @@ cryptsetup
 curl
 cython
 cython3
+darkcold-gtk-theme
 dash
 davfs2
 dbus
@@ -127,7 +129,9 @@ grub-efi-amd64
 grun
 gsetroot
 gthumb
+gtk-chtheme
 gtk-doc-tools
+gtk-theme-switch
 gvncviewer
 gzip
 hexchat
@@ -306,7 +310,6 @@ lightdm
 linux-headers-4.12.0-2-amd64
 linux-headers-amd64
 linux-image-4.12.0-2-amd64
-linux-image-4.12.0-2-amd64-dbg
 linux-image-amd64
 lnav
 locales
@@ -318,6 +321,7 @@ lshw
 lshw-gtk
 lsof
 lvm2
+lxappearance
 m4
 man-db
 manpages
