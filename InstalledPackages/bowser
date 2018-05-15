@@ -92,6 +92,7 @@ file
 findutils
 firmware-iwlwifi
 flake8
+flatpak
 fping
 ftp
 g++
@@ -143,6 +144,7 @@ i3lock
 i7z
 iceweasel
 ifupdown
+impressive
 incron
 info
 init
