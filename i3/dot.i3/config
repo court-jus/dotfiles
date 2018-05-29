@@ -14,7 +14,7 @@ set $mod Mod4
 
 
 exec /usr/bin/compton --vsync opengl
-exec /usr/bin/dropbox start
+exec /usr/bin/owncloud
 exec /usr/bin/blueman-applet
 exec /home/gl/tools/xflux -l 43.645858 -g 1.50032
 
