@@ -281,6 +281,7 @@ libselinux1
 libsemanage-common
 libsemanage1
 libsepol1
+libsixel-bin
 libslang2
 libsmartcols1
 libsmbclient
@@ -337,6 +338,7 @@ mercurial
 mesa-common-dev
 mime-support
 mlocate
+mlterm
 mongodb-clients
 mongodb-server
 moreutils
@@ -484,6 +486,7 @@ tcpdump
 teamviewer
 telnet
 terminatorx
+terminology
 texinfo
 texlive-binaries
 texlive-extra-utils
