@@ -80,6 +80,7 @@ doc-debian
 docker-engine
 dpkg
 dropbox
+dunst
 e2fslibs
 e2fsprogs
 elasticsearch
@@ -254,6 +255,7 @@ libnewt0.52
 libnfc-bin
 libnfc-examples
 libnfnetlink0
+libnotify-bin
 libp11-kit0
 libpam-modules
 libpam-modules-bin
