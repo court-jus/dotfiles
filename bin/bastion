@@ -1,4 +1,0 @@
-#!/bin/bash
-
-export LANG=fr_FR@euro
-/usr/bin/gnome-terminal --profile=bastion --disable-factory -e "bastion_script"

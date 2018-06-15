@@ -1,1 +1,0 @@
-/home/gl/documents/tools/suivi_issues_siemens.py

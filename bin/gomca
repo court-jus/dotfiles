@@ -1,3 +1,0 @@
-cd ${HOME}/src/mca
-
-screen -x Dev || screen -S Dev -c screenrc

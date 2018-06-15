@@ -1,7 +1,0 @@
-#!/bin/bash
-
-ssh-add -l | grep "56:30:89:a7:e2:38:e9:6a:a1:6e:95:bb:2a:0d:81:00" || ssh-add
-if ! screen -x devmca; then
-    cd /home/gl/src/MCA3/run
-    screen -c mca3_screenrc_dev
-fi

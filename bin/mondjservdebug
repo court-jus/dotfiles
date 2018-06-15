@@ -1,6 +1,0 @@
-#!/bin/bash
-
-export PATH=/home/gl/local/bin:$PATH
-export LD_LIBRARY_PATH=/home/gl/local/lib:$LD_LIBRARY_PATH
-
-/home/gl/src/clarisys/MONMCA3/djserv/webserver.py -c /etc/djserv/monmca3.py -p 9090 --debug
