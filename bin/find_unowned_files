@@ -7,6 +7,7 @@
 WORKDIR=$(mktemp -d)
 INSTALLED=${WORKDIR}/installed
 OWNED=${WORKDIR}/owned
+ALL_FILES=${WORKDIR}/all_files
 
 
 installed_packages() {
@@ -24,9 +25,15 @@ owned_files() {
 echo "Listing installed packages..." 1>&2
 installed_packages > ${INSTALLED}
 echo "Finding owned files..." 1>&2
-owned_files ${INSTALLED} > ${OWNED}
-echo "Finding unowned files..." 1>&2
-sudo find / | grep -vF -f ${OWNED}
+owned_files ${INSTALLED} | sort -u > ${OWNED}
+echo "Finding all files..." 1>&2
+sudo find / \
+    -not -path "/dev/*" -and \
+    -not -path "/sys/*" -and \
+    -not -path "/run/*" -and \
+    -not -path "/proc/*" | sort > ${ALL_FILES}
+echo "Unowned files:" 1>&2
+comm -13 ${OWNED} ${ALL_FILES}
 
 # Remove temporary folder
 rm -rf ${WORKDIR}
