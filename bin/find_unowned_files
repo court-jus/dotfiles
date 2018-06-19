@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# Find all files on system that are not owned by
+# any installed debian package
+
+# Prepare a temporary folder
+WORKDIR=$(mktemp -d)
+INSTALLED=${WORKDIR}/installed
+OWNED=${WORKDIR}/owned
+
+
+installed_packages() {
+    # List installed packages
+    dpkg --get-selections | awk '$2 ~ /^install$/ {print $1}'
+}
+
+owned_files() {
+    # List files owned by installed packages
+    for pkgname in $(cat $1); do
+      dpkg -L ${pkgname}
+    done
+}
+
+echo "Listing installed packages..." 1>&2
+installed_packages > ${INSTALLED}
+echo "Finding owned files..." 1>&2
+owned_files ${INSTALLED} > ${OWNED}
+echo "Finding unowned files..." 1>&2
+sudo find / | grep -vF -f ${OWNED}
+
+# Remove temporary folder
+rm -rf ${WORKDIR}
