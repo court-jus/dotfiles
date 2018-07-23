@@ -1,6 +1,6 @@
 #!/bin/bash
 
-workdir=/home/gl/dotfiles/InstalledPackages/
+workdir=/home/ghislain/dotfiles/InstalledPackages/
 
 apt-mark showmanual > ${workdir}/$(hostname)
 
