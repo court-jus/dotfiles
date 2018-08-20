@@ -40,7 +40,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/mes_aliases_git
@@ -65,5 +65,10 @@ export PAGER="less -S"
 export DEBEMAIL="gleveque@itrust.fr"
 export DEBFULLNAME="Ghislain Lévêque"
 export PASSWORD_STORE_CLIP_TIME=300
+
+export POSTGRES_PASSWORD="password"
+export RABBITMQ_DEFAULT_PASS="password"
+export DJANGO_ADMIN_PASSWORD="password"
+
 
 bindkey '^R' history-incremental-pattern-search-backward
