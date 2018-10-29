@@ -23,6 +23,8 @@ def list_properties(player):
 
 
 def get_curtrack(player):
+    if not player:
+        return ""
     metadata = player.Get('org.mpris.MediaPlayer2.Player', 'Metadata',
         dbus_interface='org.freedesktop.DBus.Properties')
     curtrack = "{} - {}".format(
@@ -33,6 +35,8 @@ def get_curtrack(player):
 
 
 def get_playpause(player):
+    if not player:
+        return ""
     return player.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus',
         dbus_interface='org.freedesktop.DBus.Properties') == "Playing"
 

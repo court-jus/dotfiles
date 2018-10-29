@@ -50,12 +50,16 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+l exec i3lock -i /home/ghislain/Images/lock.png
 bindsym XF86Sleep exec i3lock -i /home/ghislain/Images/lock.png
 bindsym XF86AudioPlay exec /home/ghislain/bin/playpause
-bindsym XF86Calculator exec /home/ghislain/bin/passdmenu.py
+bindsym XF86TouchpadToggle exec /home/ghislain/bin/passdmenu.py
+bindsym XF86AudioRaiseVolume exec /home/ghislain/bin/volup
+bindsym XF86AudioLowerVolume exec /home/ghislain/bin/voldn
+bindsym XF86AudioMute exec /home/ghislain/bin/mute
 bindsym $mod+Shift+g exec google-chrome
 bindsym $mod+Shift+f exec /usr/bin/firefox
 bindsym $mod+Ctrl+Mod1+Return exec /usr/bin/atom
 bindsym $mod+Ctrl+Mod1+BackSpace exec /usr/bin/keepass2 --auto-type
 bindsym Mod1+F2 exec /usr/bin/grun
+bindsym Mod1+F3 exec /home/ghislain/bin/passdmenu.py
 bindsym --release Print exec /home/ghislain/bin/myscrot -s
 bindsym Shift+Print exec /home/ghislain/bin/scrot/lastscrot.sh
 
@@ -128,7 +132,7 @@ bindsym $mod+Shift+ccedilla move container to workspace 9
 bindsym $mod+Shift+agrave move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c exec code
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)

@@ -13,3 +13,5 @@ else
     echo "solo" | tee -a $LOG
     /home/ghislain/.screenlayout/solo.sh
 fi
+
+/usr/bin/Esetroot /home/ghislain/Images/lock.png
