@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat << EOF
+fluidsynth -a pulseaudio ~/Music/GS/GS.sf2 -v -d -i -s &
+aconnect -i
+aconnect -o
+aconnect 20 128
+EOF
