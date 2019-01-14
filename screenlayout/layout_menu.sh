@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORKDIR=${HOME}/.screenlayout
+WORKDIR=${HOME}/.screenlayout/
 
 whattodo_choices() {
     echo "activate"
