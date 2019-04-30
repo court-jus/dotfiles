@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cd /home/gl/anaconda2/000/
-/home/gl/anaconda2/bin/jupyter-notebook

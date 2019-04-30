@@ -1,8 +1,13 @@
 #!/bin/bash
 
-ip=$(docker inspect \
-      --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
-      $1)
+
+get_ip() {
+    docker inspect \
+        --format='{{.Name}} {{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' \
+        $(docker ps -q) | grep "$1" | tail -n1 | awk '{print $NF}'
+}
+
+ip=$(get_ip $1)
 
 if [ -z $2 ]; then
   echo "$ip"

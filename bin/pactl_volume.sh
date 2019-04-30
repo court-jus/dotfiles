@@ -8,6 +8,7 @@ fi
 
 if [ "$1" != "M" ]; then
   pactl set-sink-volume "$SINK" "$1"
+  ~/bin/pactl_getvol.sh
 else
   pactl set-sink-mute "$SINK" toggle
 fi

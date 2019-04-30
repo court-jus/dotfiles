@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/gl/
+cd ${HOME}
 
-scrot $@ -e 'eog $f' && /home/gl/bin/scrot/lastscrot.sh
+scrot $@ -e 'eog $f' && ${HOME}/bin/scrot/lastscrot.sh

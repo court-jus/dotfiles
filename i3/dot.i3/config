@@ -14,7 +14,6 @@ set $mod Mod4
 
 
 exec /usr/bin/compton --vsync opengl
-exec /usr/bin/owncloud
 exec /usr/bin/blueman-applet
 exec /usr/bin/gpg-agent
 exec /home/ghislain/tools/xflux -l 43.645858 -g 1.50032
@@ -53,14 +52,14 @@ bindsym $mod+l exec i3lock -i /home/ghislain/Images/lock.png
 bindsym XF86Sleep exec i3lock -i /home/ghislain/Images/lock.png
 bindsym XF86AudioPlay exec /home/ghislain/bin/playpause
 bindsym XF86TouchpadToggle exec /home/ghislain/bin/passdmenu.py
-bindsym XF86AudioRaiseVolume exec /home/ghislain/bin/pactl_volume.sh +10%
-bindsym XF86AudioLowerVolume exec /home/ghislain/bin/pactl_volume.sh -10%
+bindsym XF86AudioRaiseVolume exec /home/ghislain/bin/pactl_volume.sh +1%
+bindsym XF86AudioLowerVolume exec /home/ghislain/bin/pactl_volume.sh -1%
 bindsym XF86AudioMute exec /home/ghislain/bin/pactl_volume.sh M
 bindsym $mod+Shift+g exec google-chrome
 bindsym $mod+Shift+f exec /usr/bin/firefox
 bindsym $mod+Ctrl+Mod1+Return exec /usr/bin/atom
 bindsym $mod+Ctrl+Mod1+BackSpace exec /usr/bin/keepass2 --auto-type
-bindsym Mod1+F2 exec /usr/bin/grun
+bindsym Mod1+F2 exec "/usr/bin/rofi -combi-modi window,run -show combi -modi combi"
 bindsym Mod1+F3 exec /home/ghislain/bin/passdmenu.py
 bindsym Mod1+F4 exec /home/ghislain/.screenlayout/layout_menu.sh
 bindsym --release Print exec /home/ghislain/bin/myscrot -s
@@ -196,7 +195,6 @@ bar {
         }
 }
 
-exec /home/ghislain/bin/mysshadd
 exec /usr/bin/xautolock -locker /usr/bin/i3lock -i /home/ghislain/Images/lock.png
 exec /home/ghislain/.screenlayout/default_layout.sh
 # exec /usr/bin/google-musicmanager
@@ -206,7 +204,7 @@ exec /usr/bin/xset m 4/1
 exec /usr/bin/xsetroot -solid "#002b36"
 # exec /usr/bin/python /home/ghislain/bin/FolderWatch/main.py
 exec /usr/bin/nm-applet
-exec /usr/bin/volumeicon
+exec /usr/bin/pasystray
 exec /usr/bin/Esetroot /home/ghislain/Images/lock.png
 exec /home/ghislain/bin/auto_layout.sh
 

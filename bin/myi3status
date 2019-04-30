@@ -3,6 +3,6 @@
 i3status | while :
 do
     read line
-    echo "$(/home/ghislain/bin/curtrack) | $line | $(/home/ghislain/bin/kbleds)"
+    echo "${hc} | $(/home/ghislain/bin/curtrack) | $line | $(/home/ghislain/bin/kbleds)"
 done
 
