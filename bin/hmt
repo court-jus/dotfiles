@@ -1,0 +1,17 @@
+#!/bin/bash
+
+TARGET=$1
+
+if [ -z ${TARGET} ]; then
+    echo "Usage: hmt (hard move to branch) TARGET"
+    echo "  renames current branch to TARGET and hard resets it to origin/TARGET"
+    echo "  be sure your working copy is clean before using."
+    exit 1
+fi
+
+if [ -z "$(git status --porcelain)" ]; then
+    git branch -m ${TARGET}
+    git reset --hard origin/${TARGET}
+else
+    echo "Working copy is not clean"
+fi
