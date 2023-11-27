@@ -1,56 +1,17 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/bin/bash
 
-import dbus
-import re
-
-
-def get_bus():
-    bus = dbus.SessionBus()
-    return bus
-
-
-def get_player(bus):
-    for service in bus.list_names():
-        if re.match('org.mpris.MediaPlayer2.', service):
-            return bus.get_object(service, '/org/mpris/MediaPlayer2')
-
-
-def list_properties(player):
-    property_interface = dbus.Interface(player, dbus_interface='org.freedesktop.DBus.Properties')
-    for property, value in property_interface.GetAll('org.mpris.MediaPlayer2.Player').items():
-        print(property, ':', value)
-
-
-def get_curtrack(player):
-    if not player:
-        return ""
-    metadata = player.Get('org.mpris.MediaPlayer2.Player', 'Metadata',
-        dbus_interface='org.freedesktop.DBus.Properties')
-    curtrack = "{} - {}".format(
-        ", ".join(metadata.get("xesam:artist")),
-        metadata.get("xesam:title")
-    )
-    return curtrack
-
-
-def get_playpause(player):
-    if not player:
-        return ""
-    return player.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus',
-        dbus_interface='org.freedesktop.DBus.Properties') == "Playing"
-
-def main():
-
-    bus = get_bus()
-    player = get_player(get_bus())
-    playing = get_playpause(player)
-    curtrack = get_curtrack(player)
-    print "{} - {}".format(
-        "▶" if playing else "▮▮",
-        curtrack
-    )
-
-
-if __name__ == "__main__":
-    main()
+current="$(current_player)"
+if [ "${current}" == "" ]
+then
+	exit
+fi
+artist=$(playerctl -p "${current}" metadata | grep "xesam:artist" | cut -d\  -f 3- | sed -e "s/^ *//")
+title=$(playerctl -p "${current}" metadata | grep "xesam:title" | cut -d\  -f 3- | sed -e "s/^ *//")
+state=$(playerctl -p "${current}" status)
+if [ "${state}" == "Playing" ]
+then
+	icon="▶"
+else
+	icon="▮▮"
+fi
+echo "${icon} ${artist} - ${title}"

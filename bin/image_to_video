@@ -1,0 +1,8 @@
+#!/bin/sh
+
+img=$1
+duration=$2
+
+outfile=$(echo "${img}" | sed -e "s/$/.mp4/")
+
+ffmpeg -r 1/${duration} -i "${img}" -c:v libx264 -vf fps=25 -pix_fmt yuv420p "${outfile}"

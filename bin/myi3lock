@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sleep 1
+
+revert() {
+  xset dpms 0 0 0
+}
+
+trap revert HUP INT TERM
+xset dpms force off
+i3lock -n -i /tmp/unsplash/out.png
+revert

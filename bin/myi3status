@@ -1,8 +1,29 @@
 #!/bin/sh
 
+dck_is_running() {
+    running=$(docker inspect --format='{{.State.Running}}' "$1")
+    [ "${running}" = "true" ]
+}
+
+docker_status() {
+    for container in "webapp" "frontend"
+    do
+        container_name="devenv_${container}_1"
+        if dck_is_running ${container_name}
+        then
+            echo -n "<span color='#00ff00'>⬤</color>"
+        else
+            echo -n "<span color='#ff0000'>⬤</color>"
+        fi
+        echo -n " "
+    done
+}
+
+hc=$(docker_status)
+
 i3status | while :
 do
-    read line
-    echo "${hc} | $(/home/ghislain/bin/curtrack) | $line | $(/home/ghislain/bin/kbleds)"
+    read -r line
+    echo "${hc} | $(pulsemixer --get-volume) | $(/home/ghislain/bin/curtrack) | $line | $(/home/ghislain/bin/kbleds)"
 done
 

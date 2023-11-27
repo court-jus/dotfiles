@@ -9,9 +9,17 @@ if [ -z ${TARGET} ]; then
     exit 1
 fi
 
-if [ -z "$(git status --porcelain)" ]; then
+git fetch --all --prune
+
+if git show-ref --verify --quiet refs/heads/${TARGET}; then
+    echo "Branch ${TARGET} already exists, switching to it"
+    git checkout ${TARGET}
+elif [ -z "$(git status --porcelain)" ]; then
     git branch -m ${TARGET}
     git reset --hard origin/${TARGET}
 else
     echo "Working copy is not clean"
 fi
+
+echo "===== Status ====="
+git status

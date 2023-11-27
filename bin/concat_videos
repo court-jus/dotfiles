@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#  ffmpeg -i VID_20220121_222242.mp4 -i crop.mp4 -filter_complex "[0:v:0][1:v:0]concat=n=2:v=1:a=0[outv]" -map "[outv]" concatenated.mp4
+
+
+listfile=".files_to_concat.txt"
+for file in $@
+do
+    echo "file ${file}" >> ${listfile}
+done
+
+ffmpeg -f concat -safe 0 -i "${listfile}" -c copy concatenated.mp4

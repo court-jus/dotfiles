@@ -1,41 +1,28 @@
 #!/bin/bash
 
-activew=$(xdotool getactivewindow)
-actived=$(xdotool get_desktop)
+echo "Detecting players"
+currently_playing=""
 
-app="spotify"
-
-#if mpc | grep "^\[playing\]" ; then
-#    app="mpd"
-#elif mpc | grep "^\[paused\]" ; then
-#    app="mpd"
-#elif pacmd list-sink-inputs | head -1 | grep "^0"; then
-#    # on est en pause
-#    app=$(cat $HOME/.musicapp)
-#elif pacmd list-sink-inputs | grep -i "^\s*application.name.*Chrome"; then
-#    app="Chrome"
-#else
-#    app="spotify"
-#fi
-
-echo -n ${app} > $HOME/.musicapp
-
-
-if [ ${app} = "Chrome" ]; then
-    activet=$(chromix-too ls active | awk '{print $1}')
-    targetd=$(xdotool get_desktop_for_window $(xdotool search --name "Google Chrome"))
-    xdotool set_desktop ${targetd}
-    if chromix-too ls audible; then
-        chromix-too focus audible
-    else
-        chromix-too focus pinned
+for player_name in $(playerctl -l)
+do
+    status=$(playerctl -p "${player_name}" status)
+    echo " - Player ${player_name}: ${status}"
+    if [ "${status}" == "Playing" ]
+    then
+        currently_playing="${player_name}"
     fi
-    xdotool key space
-    chromix-too focus ${activet}
-    xdotool windowactivate ${activew}
-    xdotool set_desktop ${actived}
-elif [ ${app} = "spotify" ]; then
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-elif [ ${app} = "mpd" ]; then
-    mpc toggle
+done
+
+if [ "${currently_playing}" != "" ]
+then
+    echo "${currently_playing}" > "${HOME}/.musicapp"
+    echo "${currently_playing} is currently playing"
+    playerctl -p "${currently_playing}" pause
+else
+    last_paused=$(cat "${HOME}/.musicapp")
+    if [ "${last_paused}" != "" ]
+    then
+        echo "No one is currently playing but the last used musicapp was ${last_paused}"
+        playerctl -p "${last_paused}" play
+    fi
 fi

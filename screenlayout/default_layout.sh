@@ -1,1 +1,1 @@
-/home/ghislain/.screenlayout/0_three_screens.sh
+0_two_screens.sh

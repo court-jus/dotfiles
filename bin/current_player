@@ -1,0 +1,19 @@
+#!/bin/bash
+
+currently_playing=""
+
+for player_name in $(playerctl -l)
+do
+    status=$(playerctl -p "${player_name}" status)
+    if [ "${status}" == "Playing" ]
+    then
+        currently_playing="${player_name}"
+    fi
+done
+
+if [ "${currently_playing}" != "" ]
+then
+	echo "${currently_playing}"
+else
+	cat "${HOME}/.musicapp"
+fi

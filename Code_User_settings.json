@@ -1,62 +1,137 @@
 {
-  "[html]": {
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
+    "[html]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.autoSave": "onFocusChange",
+    "atomKeymap.promptV3Features": true,
+    "editor.rulers": [
+        79,
+        88,
+        100,
+        120
+    ],
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.exclude": {
+        "**/*.pyc": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "git.autofetch": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.meteor/**": true,
+        "**/.cache/**": true,
+        "**/db/**": true,
+        "**/android/**": true,
+        "**/ios/**": true,
+        "**/.next": true
+    },
+    "terminal.integrated.rendererType": "dom",
+    "recheck.disableVersionCheck": true,
+    "editor.autoIndent": "advanced",
+    "window.titleBarStyle": "custom",
+    "html.format.indentInnerHtml": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.minimap.enabled": false,
+    "[php]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true
+    },
+    "liveshare.featureSet": "insiders",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "breadcrumbs.enabled": true,
+    "atlascode.jira.workingSite": {
+        "baseUrlSuffix": "atlassian.net"
+    },
+    "yaml.schemas": {
+        "file:///home/ghislain/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "atlascode.bitbucket.issues.explorerEnabled": false,
+    "atlascode.bitbucket.contextMenus.enabled": false,
+    "atlascode.bitbucket.statusbar.enabled": false,
+    "atlascode.bitbucket.explorer.enabled": false,
+    "atlascode.bitbucket.pipelines.explorerEnabled": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Droid Sans Mono', 'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+    "gitlab.instanceUrl": "https://gitlab.citymeo.fr/",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Solarized Light",
+    "vscode_custom_css.imports": [
+        "file:///home/ghislain/Documents/synthwave84.css"
+    ],
+    "vscode_custom_css.policy": true,
+    "atlascode.jira.jqlList": [
+        {
+            "id": "2815a2e7-527d-4fb8-b3d8-13e7fdfc688c",
+            "enabled": true,
+            "name": "My cenareo Issues",
+            "query": "assignee = currentUser() ORDER BY lastViewed DESC ",
+            "siteId": "0ec5857c-cae0-4fdd-b6f9-dbe20e343bec",
+            "monitor": true
+        }
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.defaultFormatter": "vscode.python",
+    "explorer.confirmDelete": false,
+    "openInApplication.applications": {
+        "png": "gimp"
+    },
+    "atlascode.jira.lastCreateSiteAndProject": {
+        "siteId": "0ec5857c-cae0-4fdd-b6f9-dbe20e343bec",
+        "projectKey": "CMS"
+    },
+    "shellcheck.disableVersionCheck": true,
+    "python.sortImports.args": [
+        "-w 88"
+    ],
+    "gitlab.showPipelineUpdateNotifications": true,
+    "gitlab.showIssueLinkOnStatusBar": false,
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true
-  },
-  "[python]": {
-    "editor.formatOnSave": false,
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true
-  },
-
-  "python.formatting.provider": "yapf",
-  "python.formatting.yapfArgs": ["--style", "{based_on_style: facebook}"],
-
-  "files.autoSave": "onFocusChange",
-  "atomKeymap.promptV3Features": true,
-  "editor.rulers": [88],
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.formatOnSave": false,
-  "editor.formatOnPaste": true,
-  "files.exclude": {
-    "**/*.pyc": true
-  },
-  "git.autofetch": true,
-  "python.jediEnabled": true,
-  "python.pythonPath": "venv/bin/python2.7",
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": [
-    "--config=${workspaceFolder}/CI/flake8",
-    "--max-line-length=100"
-  ],
-  "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
-
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/.meteor/**": true,
-    "**/.cache/**": true,
-    "**/db/**": true,
-    "**/android/**": true,
-    "**/ios/**": true,
-    "**/.next": true
-  },
-  "terminal.integrated.rendererType": "dom",
-  "window.zoomLevel": 0,
-  "shellcheck.disableVersionCheck": true,
-  "editor.autoIndent": false,
-  "window.titleBarStyle": "custom",
-  "html.format.indentInnerHtml": true,
-  "editor.detectIndentation": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.minimap.enabled": false,
-  "[php]": {
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
-    "editor.formatOnSave": true,
-    "editor.insertSpaces": true
-},
-"liveshare.featureSet": "insiders"
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "redhat.telemetry.enabled": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontSize": 16,
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "be5invis.toml"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.associations": {
+        "*.html": "html"
+    },
+    "[django-html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.confirmSync": false,
+    "window.zoomLevel": 2
 }

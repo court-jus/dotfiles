@@ -1,2 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/ghislain/.config/i3blocks'
+let g:netrw_dirhist_6='/home/ghislain/.oh-my-zsh'
+let g:netrw_dirhist_5='/etc/nginx/sites-enabled'
+let g:netrw_dirhist_4='/home/ghislain/src/meta-citymeo/meta-citymeo/recipes-citymeo/citymeo-box/files'
+let g:netrw_dirhist_3='/home/ghislain/src/cenarist/cenarist/providers'
+let g:netrw_dirhist_2='/home/ghislain/src/kibana/docker/kibana.yml'
+let g:netrw_dirhist_1='/home/ghislain/src/cenarist/cenarist'

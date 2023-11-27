@@ -1,0 +1,7 @@
+alias msh="make -C ${HOME} ssh"
+alias msp="make -C ${HOME} shell_plus"
+alias mup="make -C ${HOME} up"
+alias mdn="make -C ${HOME} down"
+alias zw="z w"
+alias dbu="make down; make build-up"
+alias ddbu="make down; docker-cleanup.sh ; make build-up"

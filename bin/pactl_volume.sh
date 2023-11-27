@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
-SINK=$(pactl list short sinks | grep RUNNING | cut -f1)
-
-if [ "$SINK" == "" ]; then
-  SINK="0"
-fi
-
 if [ "$1" != "M" ]; then
-  pactl set-sink-volume "$SINK" "$1"
-  ~/bin/pactl_getvol.sh
+  pulsemixer --change-volume "$1"
+  # ~/bin/pactl_getvol.sh
+elif [ "$(pulsemixer --get-mute)" == "1" ]; then
+  pulsemixer --unmute
 else
-  pactl set-sink-mute "$SINK" toggle
+  pulsemixer --mute
 fi
+
+pkill -RTMIN+12 i3blocks
