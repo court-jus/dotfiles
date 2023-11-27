@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+set -x
+
+CHOICE=$1
+
+if [ -z ${CHOICE} ]; then
+  echo "Choose something between custom, prod, devenv and preprod"
+  echo "CURRENT CONFIG:"
+  cat /etc/citymeo/local_settings.py
+  exit
+fi
+
+echo "Switching to ${CHOICE}"
+systemctl stop cenareo-*
+ln -sf /etc/citymeo/local_settings.py.${CHOICE} /etc/citymeo/local_settings.py
+cat /etc/citymeo/local_settings.py
+redis-cli flushall
+rm -rf /data/media /data/cache
+reboot
