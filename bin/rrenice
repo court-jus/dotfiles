@@ -1,0 +1,17 @@
+#!/bin/bash
+# Recursively renice PID and all its children
+
+get_children() {
+	cat /proc/$1/task/$1/children
+}
+
+renice_pid() {
+	sudo renice -n $2 -p $1
+	for child_pid in $(get_children $1)
+	do
+		echo "${child_pid}"
+		renice_pid "${child_pid}" $2
+	done
+}
+
+renice_pid $1 $2
