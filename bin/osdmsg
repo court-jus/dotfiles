@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export DISPLAY=:0
+
+if [ $# -lt 1 ]; then
+    msg="MESSAGE"
+else
+    msg="$1"
+fi
+
+echo "$msg" | osd_cat -d 0 -s 1 -c green -A right -p middle -f '-*-fixed-*-*-*-*-*-200-*-*-*-*-*-*'
+
