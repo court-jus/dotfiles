@@ -1,0 +1,40 @@
+separator_block_width=20
+interval=5
+
+[block]
+command=cat ~/first_block.txt
+markup=pango
+
+[monitoring]
+command=~/bin/stcompl.sh
+markup=pango
+interval=120
+
+[curtrack]
+command=~/bin/curtrack
+interval=15
+
+[volume]
+command=~/bin/i3blocks-volume.sh
+markup=pango
+interval=30
+signal=12  # pkill -RTMIN+12 i3blocks
+
+[battery]
+command=~/bin/i3blocks-battery.sh
+markup=pango
+interval=30
+
+[disk_root]
+command=~/bin/i3blocks-df.sh /
+markup=pango
+interval=10
+
+[time]
+command=date +"%s - %Y-%m-%d %H:%M:%S"
+
+[kbleds]
+command=~/bin/i3blocks-kbleds.sh
+markup=pango
+interval=30
+signal=12
