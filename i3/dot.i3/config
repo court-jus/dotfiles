@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:Source Code Pro 5
+font pango:Fira Code Retina
 floating_modifier $mod
 client.focused #859900 #859900 #fdf6e3 #859900
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
@@ -33,7 +33,7 @@ bindsym XF86AudioRaiseVolume exec /home/ghislain/bin/pactl_volume.sh +1
 bindsym XF86AudioLowerVolume exec /home/ghislain/bin/pactl_volume.sh -1
 bindsym XF86AudioMute exec /home/ghislain/bin/pactl_volume.sh M
 
-bindsym $mod+Shift+g exec google-chrome --profile-directory="Profile 2"
+bindsym $mod+Shift+g exec google-chrome --profile-directory="Profile 1"
 bindsym $mod+Ctrl+Shift+g exec google-chrome --profile-directory="Default"
 bindsym $mod+Shift+f exec /usr/bin/firefox
 bindsym $mod+Shift+c exec code
@@ -148,17 +148,31 @@ for_window [title="KeePass" class="KeePass2"] move container to workspace 10
 for_window [class="TeamViewer"] floating enable
 for_window [class="Mgtk.py"] move container to workspace 10
 
-# Outputs: eDP-1 DP-1 HDMI-2
+# Outputs: eDP-1 HDMI-1-0
 workspace 1 output eDP-1
-workspace 2 output HDMI-2
-workspace 3 output HDMI-2
-workspace 4 output DP-1
-workspace 5 output DP-1
-workspace 6 output HDMI-2
-workspace 7 output HDMI-2
-workspace 8 output HDMI-2
-workspace 9 output DP-1
+workspace 2 output HDMI-1-0
+workspace 3 output HDMI-1-0
+workspace 4 output HDMI-1-0
+workspace 5 output HDMI-1-0
+workspace 6 output HDMI-1-0
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output HDMI-1-0
 workspace 10 output eDP-1
+
+# Scratchpad (special workspace that can be shown everywhere)
+# Make the currently focused window a scratchpad
+bindsym $mod+XF86Calculator move scratchpad
+
+# Show the first scratchpad window
+bindsym XF86Calculator scratchpad show
+
+exec_always ~/.config/i3/scripts/gnome-keyring.sh
+
+#Hide window title bar
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # Test binding extra mouse button
 
